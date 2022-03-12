@@ -1,51 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Camila Martinez- Contact</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://kit.fontawesome.com/f6088cc271.js" crossorigin="anonymous" defer></script>
-    </head>
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
 
-    <body>
-        <nav class="menubar">
-            <div class="home-container">
-                <a href="home.html" class="menuItem" id="home">Camila Martinez</a>
-            </div>
-            <div class="menu-container">
-                <ul id="menu-items">
-                    <li><button type="button" id="theme-swticher" onclick=""><i class="fa-solid fa-moon"></i></button></li>
-                    <li><a href="projects.html" id="menu-item">Projects</a></li>	
-                    <li><a href="#blog" id="menu-item">Blog</a></li>
-                    <li><a href="contact.html" id="menu-item">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="container">
-            <h1>💻 Get in touch</h1>
-            <ul id="links-list">
-                <li><a href="mailto:camilamarb98@gmail.com">
-                    <i class="fa-solid fa-envelope"></i>
-                    Email
-                </a></li>
-                <li><a href="https://github.com/cammarb">
-                    <i class="fa-brands fa-github"></i>
-                    Github
-                </a> </li>
-                <li><a href="https://www.linkedin.com/in/camila-mart%C3%ADnez-bedoya-5b43011a2/">
-                    <i class="fa-brands fa-linkedin"></i>
-                    LinkedIn
-                </a> </li>
-            </ul>
-            <div class="btn-container">
-                <button>
-                    <a href="https://drive.google.com/file/d/1g3VvV9IFTMimCN0cXFjga67IaK3a0bcX/view?usp=sharing"
-                    id="resume-btn">
-                        My resume</a>
-                </button>
-            </div>
-        </div>
-    </body>
-</html>
+{% block nav %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<h1>💻 Get in touch</h1>
+<ul id="links-list">
+    <li><a href="mailto:camilamarb98@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            Email
+        </a></li>
+    <li><a href="https://github.com/cammarb">
+            <i class="fa-brands fa-github"></i>
+            Github
+        </a> </li>
+    <li><a href="https://www.linkedin.com/in/camila-mart%C3%ADnez-bedoya-5b43011a2/">
+            <i class="fa-brands fa-linkedin"></i>
+            LinkedIn
+        </a> </li>
+</ul>
+<div class="btn-container">
+    <button>
+        <a href="https://drive.google.com/file/d/1g3VvV9IFTMimCN0cXFjga67IaK3a0bcX/view?usp=sharing" id="resume-btn">
+            My resume</a>
+    </button>
+</div>
+{% endblock %}
