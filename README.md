@@ -2,6 +2,13 @@
 
 💻 Website containing all full-stack development projects, as well as blog posts.
 
+## Run project
+```bash
+    $env:FLASK_APP="portfolio"
+    
+    $env:FLASK_ENV="development"
+```
+
 ## Pages
 
 ### Home
