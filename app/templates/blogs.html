@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Blog Posts{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block nav %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+{% for blog in blogs %}
+<div class="single-project">
+    <div class="project-info">
+        <h2 id="project-title">
+            {{ blog.title }}
+        </h2>
+        <p id="project-description">
+            {{ blog.content }}
+        </p>
+    </div>
+    <div class="project-img-container">
+        <img src="https://raw.githubusercontent.com/cammarb/BinaryConverter/master/img/Home_ss.png"
+            alt="project screenshot" id="project-img" title="project screenshot" id="project-img">
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

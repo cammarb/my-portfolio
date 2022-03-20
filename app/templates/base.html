@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - Camila Martinez</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://kit.fontawesome.com/f6088cc271.js" crossorigin="anonymous" defer></script>
+    {% endblock %}
+</head>
+
+<body>
+    {% block nav %}
+    <nav class="menubar">
+        <div class="home-container">
+            <a href="/" class="menuItem" id="home">Camila Martinez</a>
+        </div>
+        <div class="menu-container">
+            <ul id="menu-items">
+                <li><button type="button" id="theme-swticher" onclick=""><i class="fa-solid fa-moon"></i></button></li>
+                <li><a href="/projects" id="menu-item">Projects</a></li>
+                <li><a href="/blogs" id="menu-item">Blog</a></li>
+                <li><a href="/contact" id="menu-item">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    {% endblock %}
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
