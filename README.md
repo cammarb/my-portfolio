@@ -3,10 +3,13 @@
 💻 Website containing all full-stack development projects, as well as blog posts.
 
 ## Run project
+### Windows (Powershell)
 ```bash
-    $env:FLASK_APP="portfolio"
-    
-    $env:FLASK_ENV="development"
+    py run.py
+```
+### Linux/Mac (bash)
+```bash
+    python3 run.py
 ```
 
 ## Pages
