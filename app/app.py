@@ -3,7 +3,7 @@ from flask import Flask, render_template
 from app.extensions.database import db, migrate
 
 from . import simple_pages
-from . import portfolio
+from . import projects
 from . import blog
 
 
@@ -18,7 +18,7 @@ def create_app():
 
 
 def register_blueprints(app: Flask):
-    app.register_blueprint(portfolio.routes.blueprint)
+    app.register_blueprint(projects.routes.blueprint)
     app.register_blueprint(blog.routes.blueprint)
     app.register_blueprint(simple_pages.routes.blueprint)
 
