@@ -1,7 +1,7 @@
-from app.extensions.database import db
+from app.extensions.database import db, CRUDMixin
 
 
-class Project(db.Model):
+class Project(db.Model, CRUDMixin):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
     description = db.Column(db.String(300))
