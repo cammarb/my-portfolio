@@ -20,3 +20,11 @@ def blog(id):
         'blog.html',
         blog=blog
     )
+
+
+@blueprint.route('/blogs/new')
+def new_blog():
+
+    return render_template(
+        'new_blog.html'
+    )
