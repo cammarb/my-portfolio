@@ -37,20 +37,29 @@ db.session.commit()
 blog_posts = {
     '1': {
         "title": "Learning Flask development",
-        "content": "This is the content for Blog 1"
+        "content": "This is the content for Blog 1",
+        "picture_url": "https://www.muycanal.com/wp-content/uploads/2014/03/PCLinux.jpg"
     },
     '2': {
-        "title": "How to install Ubuntu 22.04 LTS",
-        "content": "This is the content for Blog 2"
+        "title": "How to install Ubuntu 22.04 LTS Jammy Jellyfish",
+        "content": "This is the content for Blog 2",
+        "picture_url": "https://www.muycanal.com/wp-content/uploads/2014/03/PCLinux.jpg"
+
     },
     '3': {
         "title": "Learning GTK4 for GNOME development",
-        "content": "This is the content for Blog 3"
+        "content": "This is the content for Blog 3",
+        "picture_url": "https://www.muycanal.com/wp-content/uploads/2014/03/PCLinux.jpg"
+
     },
 }
 
 for id, post in blog_posts.items():
-    new_post = Blog(id=id, title=post['title'], content=post['content'])
+    new_post = Blog(
+        id=id,
+        title=post['title'],
+        content=post['content'],
+        picture_url=post['picture_url'])
     db.session.add(new_post)
 
 db.session.commit()
