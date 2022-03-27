@@ -40,13 +40,16 @@ should be required to be posted.
 Display of links to my Github profile, email, Linkedin and PDF
 resume.
 
-## Features
+## Features To do
 
-- 💡 Dark and light mode switcher
-- ➕ Create, Edit, Delete a blog post
-- 🔒 Login/Authentication
-- 🔍 Search and filter blog entries
-- 🎨 Background animations
+- [ ] 💡 Dark and light mode switcher
+- [ ] ➕ Blog
+    - [x] Create
+    - [ ] Edit
+    - [ ] Delete 
+- [ ] 🔒 Login/Authentication
+- [ } 🔍 Search and filter blog entries
+- [ ] 🎨 Background animations
 
 ## Built in with
 
