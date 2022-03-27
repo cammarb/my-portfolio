@@ -9,19 +9,22 @@
 {% endblock %}
 
 {% block content %}
-<form>
+<form method="post">
     <h2>New Blog Post:</h2>
     <div>
       <label for="title">Title:</label>
-      <input type="text" name="title" id="title" placeholder="Learning Flask">
+      <input type="text" name="title" id="title" 
+      placeholder="Learning Flask" value="{{ request.form['title'] }}">
     </div>
     <div>
       <label for="content">Content:</label>
-      <input type="text" name="content" id="content" placeholder="Sample Street 24">
+      <textarea name="content" id="content" placeholder="Insert text here...">{{ request.form['content'] }}</textarea>
     </div>
     <div>
-      <label for="image">Header image URL:</label>
-      <input type="text" name="image" id="image_url" placeholder="https://www.muycanal.com/wp-content/uploads/2014/03/PCLinux.jpg">
+      <label for="picture_url">Header image URL:</label>
+      <input type="text" name="picture_url" id="picture_url" 
+      placeholder="https://www.image.com/image.jpg"
+      value="{{ request.form['picture_url'] }}">
     </div>
     <input type="submit" value="Add">
 </form>
