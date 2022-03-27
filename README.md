@@ -48,7 +48,7 @@ resume.
     - [ ] Edit
     - [ ] Delete 
 - [ ] 🔒 Login/Authentication
-- [ } 🔍 Search and filter blog entries
+- [ ] 🔍 Search and filter blog entries
 - [ ] 🎨 Background animations
 
 ## Built in with
