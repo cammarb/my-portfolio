@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from .models import Blog
 
 blueprint = Blueprint('blog', __name__)
@@ -22,9 +22,15 @@ def blog(id):
     )
 
 
-@blueprint.route('/blogs/new')
+@blueprint.route('/blogs/new', methods=('GET', 'POST'))
 def new_blog():
-
+    if request.method == 'POST':
+        new_post = Blog(
+            title=request.form['title'],
+            content=request.form['content'],
+            picture_url=request.form['picture_url']
+        )
+        new_post.save()
     return render_template(
         'new_blog.html'
     )
