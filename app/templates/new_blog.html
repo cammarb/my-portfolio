@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}New Blog Post{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block nav %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<form>
+    <h2>New Blog Post:</h2>
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" placeholder="Learning Flask">
+    </div>
+    <div>
+      <label for="content">Content:</label>
+      <input type="text" name="content" id="content" placeholder="Sample Street 24">
+    </div>
+    <div>
+      <label for="image">Header image URL:</label>
+      <input type="text" name="image" id="image_url" placeholder="https://www.muycanal.com/wp-content/uploads/2014/03/PCLinux.jpg">
+    </div>
+    <input type="submit" value="Add">
+</form>
+
+{% endblock %}

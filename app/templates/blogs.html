@@ -16,11 +16,12 @@
             {{ blog.title }}
         </h2>
         <p id="project-description">
-            {{ blog.content }}
+            {{ blog.content[0:100] }} ...
         </p>
+        <button type="button"><a href="blogs/{{blog.id}}">Read more</a></button>
     </div>
     <div class="project-img-container">
-        <img src="https://raw.githubusercontent.com/cammarb/BinaryConverter/master/img/Home_ss.png"
+        <img src="{{blog.picture_url}}"
             alt="project screenshot" id="project-img" title="project screenshot" id="project-img">
     </div>
 </div>
