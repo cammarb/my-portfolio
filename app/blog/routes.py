@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, redirect, render_template, request, url_for
 from .models import Blog
 
 blueprint = Blueprint('blog', __name__)
@@ -9,7 +9,7 @@ blueprint = Blueprint('blog', __name__)
 @blueprint.route('/blogs')
 def blogs():
     all_blogs = Blog.query.all()
-    return render_template('blogs.html', blogs=all_blogs)
+    return render_template('blog/blogs.html', blogs=all_blogs)
 
 
 @blueprint.route('/blogs/<id>')
@@ -17,7 +17,7 @@ def blog(id):
     blog = Blog.query.get(id)
 
     return render_template(
-        'blog.html',
+        'blog/blog.html',
         blog=blog
     )
 
@@ -31,6 +31,8 @@ def new_blog():
             picture_url=request.form['picture_url']
         )
         new_post.save()
+        return redirect(url_for('blog.blog', id=new_post.id))
+
     return render_template(
-        'new_blog.html'
+        'blog/new_blog.html',
     )
