@@ -12,9 +12,12 @@ def projects():
     return render_template('projects/projects.html', projects=all_projects)
 
 
-@blueprint.route('/projects/<id>')
+@blueprint.route('/projects/<id>', methods=('GET', 'POST'))
 def project(id):
     project = Project.query.get(id)
+    if request.method == 'POST':
+        project.delete()
+        return redirect(url_for('projects.projects'))
 
     return render_template(
         'projects/project.html',
