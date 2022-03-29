@@ -12,9 +12,13 @@ def blogs():
     return render_template('blog/blogs.html', blogs=all_blogs)
 
 
-@blueprint.route('/blogs/<id>')
+@blueprint.route('/blogs/<id>', methods=('GET', 'POST'))
 def blog(id):
     blog = Blog.query.get(id)
+
+    if request.method == 'POST':
+        blog.delete()
+        return redirect(url_for('blog.blogs'))
 
     return render_template(
         'blog/blog.html',
