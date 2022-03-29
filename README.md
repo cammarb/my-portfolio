@@ -5,17 +5,8 @@
 ![screenshot](https://raw.githubusercontent.com/cammarb/my-portfolio/master/portfolio_screenshot.png)
 
 ## Run project
-
-### Windows (Powershell)
-
-```bash
-    py run.py
 ```
-
-### Linux/Mac (bash)
-
-```bash
-    python3 run.py
+    flask run
 ```
 
 ## Pages
@@ -47,9 +38,13 @@ resume.
     - [x] Create
     - [ ] Edit
     - [ ] Delete 
+- [ ] 📁 Project
+    - [x] Create
+    - [ ] Edit
+    - [ ] Delete 
 - [ ] 🔒 Login/Authentication
-- [ ] 🔍 Search and filter blog entries
-- [ ] 🎨 Background animations
+- [ ] 🔍 Search and filter blog entries TDB
+- [ ] 🎨 Background animations TBD
 
 ## Built in with
 
