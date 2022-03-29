@@ -37,11 +37,11 @@ resume.
 - [ ] ➕ Blog
     - [x] Create
     - [ ] Edit
-    - [ ] Delete 
+    - [x] Delete 
 - [ ] 📁 Project
     - [x] Create
     - [ ] Edit
-    - [ ] Delete 
+    - [x] Delete 
 - [ ] 🔒 Login/Authentication
 - [ ] 🔍 Search and filter blog entries TDB
 - [ ] 🎨 Background animations TBD
