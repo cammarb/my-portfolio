@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} {{ name }} {% endblock %}
+{% block title %} {{ project.name }} {% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
@@ -11,19 +11,22 @@
 {% block content %}
 <div class="single-project">
     <div class="project-info">
-        <h1 id="project-title"> {{ name }} </h1>
+        <h1 id="project-title"> {{ project.title }} </h1>
+        <div class="project-img-container">
+            <img src="{{project.image_link}}"
+                alt="project screenshot" id="project-img" title="project screenshot" id="project-img">
+        </div>
         <p id="project-description">
-            {{ description }}
+            {{ project.description }}
         </p>
         <div class="project-links">
-            <a href="https://github.com/cammarb">
+            <a href="{{project.gh_link}}">
                 <i class="fa-brands fa-github" id="github-icon"></i>
             </a>
         </div>
     </div>
-    <div class="project-img-container">
-        <img src="https://raw.githubusercontent.com/cammarb/BinaryConverter/master/img/Home_ss.png"
-            alt="project screenshot" id="project-img" title="project screenshot" id="project-img">
-    </div>
+    <form method="post">
+        <input type="submit" value="Delete" >
+    </form>
 </div>
 {% endblock %}
