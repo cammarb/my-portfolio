@@ -5,6 +5,7 @@ from app.extensions.database import db, migrate
 from . import simple_pages
 from . import projects
 from . import blog
+from . import users
 
 
 def create_app():
@@ -21,6 +22,7 @@ def register_blueprints(app: Flask):
     app.register_blueprint(projects.routes.blueprint)
     app.register_blueprint(blog.routes.blueprint)
     app.register_blueprint(simple_pages.routes.blueprint)
+    app.register_blueprint(users.routes.blueprint)
 
 
 def register_extensions(app: Flask):
