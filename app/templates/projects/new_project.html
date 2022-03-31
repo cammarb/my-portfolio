@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% block title %}New Project{% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
@@ -8,29 +7,48 @@
 {{ super() }}
 {% endblock %}
 
+{% block header %}
+<h2>
+  {% block title %}
+  Add Project
+  {% endblock %}
+</h2>
+{% endblock %}
+
+
 {% block content %}
 <form method="post">
-  <h2>New Project:</h2>
-  <div>
+  <div class="input-container">
     <label for="title">Title:</label>
+    <br>
+
     <input type="text" name="title" id="title" placeholder="My awesome app" value="{{ request.form['title'] }}">
   </div>
-  <div>
+  <div class="input-container">
     <label for="description">Description:</label>
+    <br>
+
     <textarea name="description" id="description"
       placeholder="Insert description here...">{{ request.form['description'] }}</textarea>
   </div>
-  <div>
+  <div class="input-container">
     <label for="image_link">Image URL:</label>
+    <br>
+
     <input type="text" name="image_link" id="image_link" placeholder="https://www.image.com/image.jpg"
       value="{{ request.form['image_link'] }}">
   </div>
-  <div>
+  <div class="input-container">
     <label for="gh_link">Github URL:</label>
+    <br>
+
     <input type="text" name="gh_link" id="gh_link" placeholder="https://www.github.com/awesome.git"
       value="{{ request.form['gh_link'] }}">
   </div>
-  <input type="submit" value="Add">
+  <div class="btn-container">
+    <input type="submit" value="Add" class="input-btn">
+  </div>
+
 </form>
 
 {% endblock %}

@@ -13,8 +13,8 @@
     <div class="project-info">
         <h1 id="project-title"> {{ project.title }} </h1>
         <div class="project-img-container">
-            <img src="{{project.image_link}}"
-                alt="project screenshot" id="project-img" title="project screenshot" id="project-img">
+            <img src="{{project.image_link}}" alt="project screenshot" id="project-img" title="project screenshot"
+                id="project-img">
         </div>
         <p id="project-description">
             {{ project.description }}
@@ -26,7 +26,9 @@
         </div>
     </div>
     <form method="post">
-        <input type="submit" value="Delete" >
+        <div class="btn-container">
+            <input type="submit" value="Delete">
+        </div>
     </form>
 </div>
 {% endblock %}

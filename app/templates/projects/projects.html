@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% block title %}Projects{% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
@@ -8,10 +7,21 @@
 {{ super() }}
 {% endblock %}
 
-{% block content %}
-<div class="create_project">
+{% block header %}
+<div>
+    <h1>
+        {% block title %}
+        Projects 📁
+        {% endblock %}
+    </h1>
+</div>
+<div class="create-project">
     <button><a href="projects/new">Add a project</a></button>
 </div>
+{% endblock %}
+
+
+{% block content %}
 {% for project in projects %}
 <div class="single-project">
     <div class="project-info">
@@ -20,14 +30,14 @@
             {{ project.description }}
         </p>
         <div class="project-links">
-            <a href="{{project.gh_link}}">
+            <a href="{{project.gh_link}}" class="repo-link">
                 <i class="fa-brands fa-github" id="github-icon"></i>
+                Repository
             </a>
         </div>
     </div>
     <div class="project-img-container">
-        <img src="{{project.image_link}}" alt="project screenshot" id="project-img" title="project screenshot"
-            id="project-img">
+        <img src="{{project.image_link}}" alt="project screenshot" id="project-img" title="project screenshot">
     </div>
 </div>
 {% endfor %}
