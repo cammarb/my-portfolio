@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% block title %}New Blog Post{% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
@@ -8,25 +7,35 @@
 {{ super() }}
 {% endblock %}
 
+{% block header %}
+<h2>
+  {% block title %}
+  New Blog Post
+  {% endblock %}
+</h2>
+{% endblock %}
+
 {% block content %}
 <form method="post">
-    <h2>New Blog Post:</h2>
-    <div>
-      <label for="title">Title:</label>
-      <input type="text" name="title" id="title" 
-      placeholder="Learning Flask" value="{{ request.form['title'] }}">
-    </div>
-    <div>
-      <label for="content">Content:</label>
-      <textarea name="content" id="content" placeholder="Insert text here...">{{ request.form['content'] }}</textarea>
-    </div>
-    <div>
-      <label for="picture_url">Header image URL:</label>
-      <input type="text" name="picture_url" id="picture_url" 
-      placeholder="https://www.image.com/image.jpg"
+  <div class="input-container">
+    <label for="title">Title:</label>
+    <br>
+    <input type="text" name="title" id="title" placeholder="Learning Flask" value="{{ request.form['title'] }}">
+  </div>
+  <div class="input-container">
+    <label for="content">Content:</label>
+    <br>
+    <textarea name="content" id="content" placeholder="Insert text here...">{{ request.form['content'] }}</textarea>
+  </div>
+  <div class="input-container">
+    <label for="picture_url">Header image URL:</label>
+    <br>
+    <input type="text" name="picture_url" id="picture_url" placeholder="https://www.image.com/image.jpg"
       value="{{ request.form['picture_url'] }}">
-    </div>
-    <input type="submit" value="Add">
+  </div>
+  <div class="btn-container">
+    <input type="submit" value="Add" class="input-btn">
+  </div>
 </form>
 
 {% endblock %}

@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% block title %}Blog Posts{% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
@@ -8,24 +7,36 @@
 {{ super() }}
 {% endblock %}
 
-{% block content %}
-<div class="create_project">
+
+{% block header %}
+<div>
+    <h1>
+        {% block title %}
+        Blog posts 📝
+        {% endblock %}
+    </h1>
+</div>
+<div class="create-post">
     <button><a href="blogs/new">Create a post</a></button>
 </div>
+{% endblock %}
+
+{% block content %}
 {% for blog in blogs %}
-<div class="single-project">
-    <div class="project-info">
-        <h2 id="project-title">
+<div class="blog-post">
+    <div class="blog-info">
+        <h2 id="blog-title">
             {{ blog.title }}
         </h2>
-        <p id="project-description">
+        <p id="blog-description">
             {{ blog.content[0:100] }} ...
         </p>
+    </div>
+    <div class="btn-container">
         <button type="button"><a href="blogs/{{blog.id}}">Read more</a></button>
     </div>
-    <div class="project-img-container">
-        <img src="{{blog.picture_url}}" alt="project screenshot" id="project-img" title="project screenshot"
-            id="project-img">
+    <div class="blog-img-container">
+        <img src="{{blog.picture_url}}" alt="project screenshot" id="blog-img" title="project screenshot">
     </div>
 </div>
 {% endfor %}
