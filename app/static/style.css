@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
 }
+
 .menubar {
   padding: 0 3rem;
   margin-top: 0.5rem;
@@ -15,40 +16,54 @@ button {
   background-color: rgb(39, 39, 39);
   border: none;
   border-radius: 0.25rem;
-  width: 100px;
-  height: 30px;
+  width: 150px;
+  height: 40px;
 }
+
 button a {
   text-decoration: none;
   color: white !important;
+  font-size: larger;
 }
+
 .home-container,
 .menu-container {
   display: inline-block;
   margin: 0.9rem;
 }
+
 .menu-container {
   float: right;
 }
+
 .home-container a {
   text-decoration: none;
   color: rgb(39, 39, 39);
 }
+
 #menu-items {
   list-style-type: none;
 }
+
 #menu-items li {
   display: inline;
 }
+
 #menu-item {
   text-decoration: none;
   color: rgb(39, 39, 39);
   margin-left: 50px;
 }
+
 #theme-swticher {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+.login-btn {
+  margin-left: 50px;
+  width: 100px;
 }
 
 /* Body */
@@ -81,10 +96,12 @@ button a {
 #resume-btn {
   text-decoration: none;
 }
+
 #github-link {
   text-align: center;
   margin: 0.8rem;
 }
+
 #github-link a {
   text-decoration: none;
   color: rgb(39, 39, 39);
@@ -105,15 +122,18 @@ button a {
   border-radius: 5px;
   padding: 2rem;
 }
+
 .project-info,
 .project-img-container {
   vertical-align: middle;
   margin: 0 2rem;
 }
+
 .project-info {
   width: 400px;
   text-align: left;
 }
+
 #project-title {
   margin-bottom: 0.8rem;
 }
@@ -121,9 +141,11 @@ button a {
 #project-img {
   width: 400px;
 }
+
 .project-links {
   margin: 25px 5px;
 }
+
 #github-icon {
   font-size: 30px;
   color: rgb(39, 39, 39);
@@ -137,9 +159,11 @@ button a {
   text-align: center;
   display: flex;
 }
+
 #links-list li {
   padding: 0.3rem 0.8rem;
 }
+
 #links-list li a {
   text-decoration: none !important;
   color: rgb(39, 39, 39);
