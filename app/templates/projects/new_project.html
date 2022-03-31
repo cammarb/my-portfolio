@@ -10,29 +10,27 @@
 
 {% block content %}
 <form method="post">
-    <h2>New Project:</h2>
-    <div>
-      <label for="title">Title:</label>
-      <input type="text" name="title" id="title" 
-      placeholder="My awesome app" value="{{ request.form['title'] }}">
-    </div>
-    <div>
-      <label for="description">Description:</label>
-      <textarea name="description" id="description" placeholder="Insert description here...">{{ request.form['description'] }}</textarea>
-    </div>
-    <div>
-      <label for="image_link">Image URL:</label>
-      <input type="text" name="image_link" id="image_link" 
-      placeholder="https://www.image.com/image.jpg"
+  <h2>New Project:</h2>
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" placeholder="My awesome app" value="{{ request.form['title'] }}">
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea name="description" id="description"
+      placeholder="Insert description here...">{{ request.form['description'] }}</textarea>
+  </div>
+  <div>
+    <label for="image_link">Image URL:</label>
+    <input type="text" name="image_link" id="image_link" placeholder="https://www.image.com/image.jpg"
       value="{{ request.form['image_link'] }}">
-    </div>
-    <div>
-      <label for="gh_link">Github URL:</label>
-      <input type="text" name="gh_link" id="gh_link" 
-      placeholder="https://www.github.com/awesome.git"
+  </div>
+  <div>
+    <label for="gh_link">Github URL:</label>
+    <input type="text" name="gh_link" id="gh_link" placeholder="https://www.github.com/awesome.git"
       value="{{ request.form['gh_link'] }}">
-    </div>
-    <input type="submit" value="Add">
+  </div>
+  <input type="submit" value="Add">
 </form>
 
 {% endblock %}
