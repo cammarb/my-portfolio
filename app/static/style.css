@@ -1,19 +1,35 @@
 /* Google Font - Fira Code */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 
+/* Defaults */
+:root {
+  --black: rgb(39, 39, 39);
+  --white: #fff;
+}
+
 * {
   font-family: "Fira Code", monospace;
   margin: 0;
   padding: 0;
 }
 
+header {
+  display: grid;
+  grid-template-columns: auto auto;
+  /* margin-bottom: 2rem; */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 2rem 2rem 2rem;
+}
+
+/* Navbar */
 .menubar {
   padding: 0 3rem;
   margin-top: 0.5rem;
 }
 
 button {
-  background-color: rgb(39, 39, 39);
+  background-color: var(--black);
   border: none;
   border-radius: 0.25rem;
   width: 150px;
@@ -22,7 +38,7 @@ button {
 
 button a {
   text-decoration: none;
-  color: white !important;
+  color: var(--white) !important;
   font-size: larger;
 }
 
@@ -75,22 +91,23 @@ button a {
   padding: 5vh 0 5vh 0;
 }
 
+.btn-container {
+  margin: 25px auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Home */
 .header {
   text-align: center;
 }
 
 .title,
-.terminal-container {
+.img-container {
   text-align: left;
   display: inline-block;
   vertical-align: middle;
   margin: 2rem;
-}
-
-.btn-container {
-  margin: 25px auto;
-  display: flex;
-  justify-content: center;
 }
 
 #resume-btn {
@@ -108,10 +125,15 @@ button a {
   font-weight: 600;
 }
 
-/* Projects page */
-.single-project {
-  /* text-align: center;
-  margin-bottom: 3rem; */
+/* Projects & Blogs page */
+.create-project,
+.create-post {
+  padding-left: 2rem;
+  margin-left: 2rem;
+}
+
+.single-project,
+.blog-post {
   width: auto;
   display: grid;
   grid-template-columns: auto auto;
@@ -124,21 +146,26 @@ button a {
 }
 
 .project-info,
-.project-img-container {
+.blog-info,
+.project-img-container,
+.blog-img-container {
   vertical-align: middle;
   margin: 0 2rem;
 }
 
-.project-info {
+.project-info,
+.blog-info {
   width: 400px;
   text-align: left;
 }
 
-#project-title {
+#project-title,
+#blog-title {
   margin-bottom: 0.8rem;
 }
 
-#project-img {
+#project-img,
+.blog-img {
   width: 400px;
 }
 
@@ -150,6 +177,15 @@ button a {
   font-size: 30px;
   color: rgb(39, 39, 39);
 }
+
+.repo-link {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 16px;
+}
+
+/* Single Blog Post */
+
 
 /* Contact page */
 #links-list {
@@ -167,4 +203,46 @@ button a {
 #links-list li a {
   text-decoration: none !important;
   color: rgb(39, 39, 39);
+}
+
+
+
+/* Forms */
+form {
+  width: 50vw;
+  padding: 0rem 2rem;
+}
+
+input {
+  height: 25px;
+  width: inherit;
+  padding: 5px;
+  margin-top: 0.5rem;
+}
+
+.input-btn {
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 0.25rem;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+}
+
+textarea {
+  padding: 5px;
+  width: inherit;
+  height: 40vh;
+  margin-top: 0.5rem;
+}
+
+#description {
+  width: inherit;
+  height: 10vh;
+}
+
+.input-container {
+  width: inherit;
+  padding-bottom: 1rem;
 }
