@@ -30,6 +30,10 @@
     </nav>
     {% endblock %}
     <div class="container">
+        <header>
+            {% block header %}
+            {% endblock %}
+        </header>
         {% block content %}
         {% endblock %}
     </div>
