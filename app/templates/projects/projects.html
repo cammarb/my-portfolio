@@ -9,12 +9,15 @@
 {% endblock %}
 
 {% block content %}
+<div class="create_project">
+    <button><a href="projects/new">Add a project</a></button>
+</div>
 {% for project in projects %}
 <div class="single-project">
     <div class="project-info">
         <h2 id="project-title">{{ project.title }}</h2>
         <p id="project-description">
-           {{ project.description }}
+            {{ project.description }}
         </p>
         <div class="project-links">
             <a href="{{project.gh_link}}">
@@ -23,8 +26,8 @@
         </div>
     </div>
     <div class="project-img-container">
-        <img src="{{project.image_link}}"
-            alt="project screenshot" id="project-img" title="project screenshot" id="project-img">
+        <img src="{{project.image_link}}" alt="project screenshot" id="project-img" title="project screenshot"
+            id="project-img">
     </div>
 </div>
 {% endfor %}
