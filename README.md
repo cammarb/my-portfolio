@@ -5,8 +5,36 @@
 ![screenshot](https://raw.githubusercontent.com/cammarb/my-portfolio/master/portfolio_screenshot.png)
 
 ## Run project
+### 1. Clone the project and open the folder
 ```
-    flask run
+git clone https://github.com/cammarb/my-portfolio.git && cd my-portfolio
+```
+
+### 2. Create virtual enviroment
+#### Linux/MacOS
+```
+python3 -m venv venv
+```
+#### Powershell
+```
+py -3 -m venv venv
+```
+### 3. Activate virtual enviroment
+#### Linux/MacOS
+```
+. venv/bin/activate
+```
+#### Powershell
+```
+venv\Scripts\activate
+```
+### 4. Install dependencies
+```
+pip install -r requirements.txt
+```
+### 5. Run project
+```
+flask run
 ```
 
 ## Pages
@@ -42,7 +70,7 @@ resume.
     - [x] Create
     - [ ] Edit
     - [x] Delete 
-- [ ] 🔒 Login/Authentication
+- [x] 🔒 Login/Authentication
 - [ ] 🔍 Search and filter blog entries TDB
 - [ ] 🎨 Background animations TBD
 
