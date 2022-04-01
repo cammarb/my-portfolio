@@ -15,9 +15,11 @@
         {% endblock %}
     </h1>
 </div>
+{% if current_user.is_authenticated %}
 <div class="create-project">
     <button><a href="projects/new">Add a project</a></button>
 </div>
+{% endif %}
 {% endblock %}
 
 
