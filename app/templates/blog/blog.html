@@ -14,11 +14,13 @@
         {% block title %} {{ blog.title }} {% endblock %}
     </h1>
 </div>
+{% if current_user.is_authenticated %}
 <form method="post" id="delete-form">
     <div class="btn-container" id="delete-btn">
         <input type="submit" value="Delete" class="input-btn">
     </div>
 </form>
+{%endif%}
 {% endblock %}
 
 {% block content %}
@@ -27,7 +29,7 @@
         <div class="post-img-container">
             <img src="{{blog.picture_url}}" alt="header img" id="post-header-img">
         </div>
-        <p id="blog-description">
+        <p id="single-blog-description">
             {{ blog.content }}
         </p>
     </div>
