@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} {{ blog.title }} {% endblock %}
+
 {% block head %}
 {{ super() }}
 {% endblock %}
@@ -8,21 +8,28 @@
 {{ super() }}
 {% endblock %}
 
+{% block header %}
+<div>
+    <h1>
+        {% block title %} {{ blog.title }} {% endblock %}
+    </h1>
+</div>
+<form method="post" id="delete-form">
+    <div class="btn-container" id="delete-btn">
+        <input type="submit" value="Delete" class="input-btn">
+    </div>
+</form>
+{% endblock %}
+
 {% block content %}
 <div class="blog-post">
-    <div class="blog-info">
-        <h1 id="blog-title"> {{ blog.title }} </h1>
-        <div class="blog-img">
-            <img src="{{blog.picture_url}}" alt="header img">
+    <div class="single-blog-info">
+        <div class="post-img-container">
+            <img src="{{blog.picture_url}}" alt="header img" id="post-header-img">
         </div>
         <p id="blog-description">
             {{ blog.content }}
         </p>
     </div>
 </div>
-<form method="post" id="remove-blog">
-    <div class="btn-container">
-        <input type="submit" value="Delete">
-    </div>
-</form>
 {% endblock %}

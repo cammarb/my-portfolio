@@ -1,11 +1,23 @@
 {% extends "base.html" %}
-{% block title %} {{ project.name }} {% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
 
 {% block nav %}
 {{ super() }}
+{% endblock %}
+
+{% block header %}
+<div>
+    <h1>
+        {% block title %} {{ project.name }} {% endblock %}
+    </h1>
+</div>
+<form method="post">
+    <div class="btn-container">
+        <input type="submit" value="Delete">
+    </div>
+</form>
 {% endblock %}
 
 {% block content %}
@@ -25,10 +37,5 @@
             </a>
         </div>
     </div>
-    <form method="post">
-        <div class="btn-container">
-            <input type="submit" value="Delete">
-        </div>
-    </form>
 </div>
 {% endblock %}
