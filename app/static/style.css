@@ -246,3 +246,8 @@ textarea {
   width: inherit;
   padding-bottom: 1rem;
 }
+
+/* Login / Register Forms */
+.login-register {
+  width: 30vw;
+}
