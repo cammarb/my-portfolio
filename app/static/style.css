@@ -82,6 +82,10 @@ button a {
   width: 100px;
 }
 
+#login-status {
+  margin-left: 50px;
+}
+
 /* Body */
 .container {
   width: 100%;
@@ -301,4 +305,8 @@ textarea {
   padding: 0;
   padding-left: 2rem;
   margin-left: 2rem;
+}
+
+#single-blog-description {
+  padding: 1rem 5rem;
 }
