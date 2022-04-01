@@ -1,34 +1,43 @@
 {% extends 'base.html' %}
-{% block title %}Register{% endblock %}
 {% block head %}
 {{super()}}
+{% endblock %}
+
+{% block header %}
+<h2>
+    {% block title %}Register{% endblock %}
+</h2>
 {% endblock %}
 
 {% block content %}
 {% if error %}
 <p style="color: tomato;">{{ error }}</p>
 {% endif %}
-<form method="post">
-    <div>
+<form method="post" class="login-register">
+    <div class="input-container">
         <label for="name">Full name:</label>
+        <br>
         <input type="text" name="name" id="name" required>
     </div>
-    <div>
+    <div class="input-container">
         <label for="email">Email:</label>
+        <br>
         <input type="email" name="email" id="email" required>
     </div>
 
-    <div>
+    <div class="input-container">
         <label for="password">Password:</label>
+        <br>
         <input type="password" name="password" id="password" required>
     </div>
 
-    <div>
+    <div class="input-container">
         <label for="password_confirmation">Password Confirmation:</label>
+        <br>
         <input type="password" name="password_confirmation" id="password_confirmation" required>
     </div>
-    <div>
-        <input type="submit" value="Register">
+    <div class="btn-container">
+        <input type="submit" value="Register" class="input-btn">
     </div>
 </form>
 {% endblock %}

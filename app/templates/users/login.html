@@ -1,22 +1,29 @@
 {% extends 'base.html' %}
-{% block title %}Login{% endblock %}
 {% block head %}
 {{super()}}
 {% endblock %}
 
+{% block header %}
+<h2>
+    {% block title %}Login{% endblock %}
+</h2>
+{% endblock %}
+
 {% block content %}
-<form method="post">
-    <div>
+<form method="post" class="login-register">
+    <div class="input-container">
         <label for="email">Email:</label>
+        <br>
         <input type="email" name="email">
     </div>
-    <div>
+    <div class="input-container">
         <label for="password">Password:</label>
+        <br>
         <input type="password" name="password">
     </div>
 
-    <div>
-        <input type="submit" value="Login">
+    <div class="btn-container">
+        <input type="submit" value="Login" class="input-btn">
     </div>
 
 </form>
