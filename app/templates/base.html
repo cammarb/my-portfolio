@@ -24,7 +24,19 @@
                 <li><a href="/projects" id="menu-item">Projects</a></li>
                 <li><a href="/blogs" id="menu-item">Blog</a></li>
                 <li><a href="/contact" id="menu-item">Contact</a></li>
-                <li><button class="login-btn"><a href="/login">Login</a></button></li>
+                <li>{% if current_user.is_anonymous %}
+                    <button class="login-btn"><a href="/login">Login</a></button>
+                    {% endif %}
+                </li>
+                <li> {% if current_user.is_authenticated %}
+                    <small id="login-status">
+                        Logged in as {{ current_user.name }}.
+                        <button class="login-btn">
+                            <a href="{{ url_for('users.logout') }}">Logout</a>
+                        </button>
+                    </small>
+                    {% endif %}
+                </li>
             </ul>
         </div>
     </nav>
