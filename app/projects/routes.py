@@ -1,5 +1,6 @@
 from flask import Blueprint, redirect, render_template, request, url_for
 from .models import Project
+from flask_login import login_required
 
 blueprint = Blueprint('projects', __name__)
 
@@ -26,6 +27,7 @@ def project(id):
 
 
 @blueprint.route('/projects/new', methods=('GET', 'POST'))
+@login_required
 def new_project():
     if request.method == 'POST':
         new_project = Project(

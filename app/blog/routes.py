@@ -1,5 +1,6 @@
 from flask import Blueprint, redirect, render_template, request, url_for
 from .models import Blog
+from flask_login import login_required
 
 blueprint = Blueprint('blog', __name__)
 
@@ -27,6 +28,7 @@ def blog(id):
 
 
 @blueprint.route('/blogs/new', methods=('GET', 'POST'))
+@login_required
 def new_blog():
     if request.method == 'POST':
         new_post = Blog(
