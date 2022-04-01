@@ -16,7 +16,7 @@
 header {
   display: grid;
   grid-template-columns: auto auto;
-  /* margin-bottom: 2rem; */
+  margin: auto;
   align-items: center;
   justify-content: space-between;
   padding: 0rem 2rem 2rem 2rem;
@@ -125,6 +125,35 @@ button a {
   font-weight: 600;
 }
 
+#languages {
+  padding-top: 0.8rem;
+}
+
+span {
+  color: var(--white);
+  padding: 0.2rem;
+}
+
+#py {
+  background-color: rgb(24, 101, 216);
+
+}
+
+#cs {
+  background-color: rgb(149, 54, 228);
+
+}
+
+#js {
+  background-color: rgb(255, 233, 38);
+  color: var(--black);
+}
+
+#java {
+  background-color: rgb(236, 70, 70);
+
+}
+
 /* Projects & Blogs page */
 .create-project,
 .create-post {
@@ -137,8 +166,6 @@ button a {
   width: auto;
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto;
-  column-gap: 25px;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
@@ -165,7 +192,7 @@ button a {
 }
 
 #project-img,
-.blog-img {
+#blog-img {
   width: 400px;
 }
 
@@ -183,9 +210,6 @@ button a {
   color: var(--black);
   font-size: 16px;
 }
-
-/* Single Blog Post */
-
 
 /* Contact page */
 #links-list {
@@ -250,4 +274,31 @@ textarea {
 /* Login / Register Forms */
 .login-register {
   width: 30vw;
+}
+
+/* Single Post */
+.single-blog-info {
+  width: 60%;
+  margin: auto;
+}
+
+#delete-btn {
+  justify-content: flex-end;
+
+}
+
+.post-img-container {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+#post-header-img {
+  width: 60%;
+}
+
+#delete-form {
+  width: auto;
+  padding: 0;
+  padding-left: 2rem;
+  margin-left: 2rem;
 }
