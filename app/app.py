@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template
 from app.extensions.database import db, migrate
+from app.extensions.authentication import login_manager
 
 from . import simple_pages
 from . import projects
@@ -28,3 +29,4 @@ def register_blueprints(app: Flask):
 def register_extensions(app: Flask):
     db.init_app(app)
     migrate.init_app(app, db)
+    login_manager.init_app(app)
