@@ -34,10 +34,10 @@
                 </li>
                 <li> {% if current_user.is_authenticated %}
                     <small id="login-status">
-                        Logged in as {{ current_user.name }}.
                         <button class="login-btn">
                             <a href="{{ url_for('users.logout') }}">Logout</a>
                         </button>
+                        {{ current_user.name }}
                     </small>
                     {% endif %}
                 </li>
