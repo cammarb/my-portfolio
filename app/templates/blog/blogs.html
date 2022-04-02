@@ -26,6 +26,9 @@
 {% block content %}
 {% for blog in blogs %}
 <div class="blog-post">
+    <div class="blog-img-container">
+        <img src="{{blog.picture_url}}" id="blog-img">
+    </div>
     <div class="blog-info">
         <h2 id="blog-title">
             {{ blog.title }}
@@ -38,9 +41,6 @@
         </div>
     </div>
 
-    <div class="blog-img-container">
-        <img src="{{blog.picture_url}}" id="blog-img">
-    </div>
 </div>
 {% endfor %}
 {% endblock %}
