@@ -5,6 +5,7 @@
 :root {
   --black: rgb(39, 39, 39);
   --white: #fff;
+  --grey: rgb(83, 83, 83);
 }
 
 * {
@@ -27,13 +28,14 @@ header {
   display: grid;
   grid-template-columns: auto auto;
   padding: 0 3rem;
-  margin-top: 0.5rem;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0px 0px 25px -17px var(--black);
 }
 
 .menu-menu-container {
   display: none;
+  grid-template-columns: auto;
 }
 
 .hambuger-icon {
@@ -48,6 +50,11 @@ button {
   border-radius: 0.25rem;
   width: 150px;
   height: 40px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: var(--grey);
 }
 
 button a {
@@ -103,12 +110,9 @@ button a {
 }
 
 .login-btn {
-  margin-left: 50px;
+  margin-left: 2rem;
+  margin-right: 1rem;
   width: 100px;
-}
-
-#login-status {
-  margin-left: 50px;
 }
 
 /* Body */
@@ -192,12 +196,13 @@ span {
 
 .single-project,
 .blog-post {
-  /* width: auto;
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: center;
-  align-items: center; */
-  /* text-align: center; */
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
+
+.blog-post-container,
+.single-project-container {
+  text-align: center;
   border-radius: 5px;
   padding: 1rem 2rem;
 }
@@ -370,6 +375,7 @@ textarea {
 
   .menu-menu-container.responsive {
     display: block;
+    padding-bottom: 2rem;
   }
 
   .menu-menu-container.responsive #menu-items {
@@ -381,13 +387,26 @@ textarea {
 
   .menu-menu-container.responsive #menu-items li {
     display: grid;
+    padding-bottom: 0.5rem;
   }
 
   .menu-menu-container.responsive #menu-items li a {
     margin: 0.2rem 0.9rem;
   }
 
-  .menu-menu-container.responsive .login-btn {
+  .menu-menu-container.responsive .login-btn,
+  .login-status {
     margin: 0.2rem 0.9rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  form {
+    width: 70vw !important;
+
+  }
+
+  .login-register {
+    width: 70vw !important;
   }
 }
