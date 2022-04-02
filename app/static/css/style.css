@@ -24,8 +24,22 @@ header {
 
 /* Navbar */
 .menubar {
+  display: grid;
+  grid-template-columns: auto auto;
   padding: 0 3rem;
   margin-top: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-menu-container {
+  display: none;
+}
+
+.hambuger-icon {
+  padding: 0 1rem;
+  color: var(--black);
+  display: none;
 }
 
 button {
@@ -42,14 +56,17 @@ button a {
   font-size: larger;
 }
 
-.home-container,
-.menu-container {
+.home-container {
   display: inline-block;
   margin: 0.9rem;
 }
 
 .menu-container {
   float: right;
+  margin: 0.9rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
 }
 
 .home-container a {
@@ -59,6 +76,7 @@ button a {
 
 #menu-items {
   list-style-type: none;
+  overflow: hidden;
 }
 
 #menu-items li {
@@ -69,12 +87,19 @@ button a {
   text-decoration: none;
   color: rgb(39, 39, 39);
   margin-left: 50px;
+  transition: 0.3s;
+}
+
+#menu-item:hover {
+  font-weight: bolder;
 }
 
 #theme-swticher {
   background: none;
   border: none;
   cursor: pointer;
+  width: 50px;
+  padding-left: 1rem;
 }
 
 .login-btn {
@@ -167,21 +192,24 @@ span {
 
 .single-project,
 .blog-post {
-  width: auto;
+  /* width: auto;
   display: grid;
   grid-template-columns: auto auto;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  /* text-align: center; */
   border-radius: 5px;
-  padding: 2rem;
+  padding: 1rem 2rem;
 }
 
 .project-info,
 .blog-info,
 .project-img-container,
 .blog-img-container {
+  text-align: left;
+  display: inline-block;
   vertical-align: middle;
-  margin: 0 2rem;
+  margin: 1rem 2rem;
 }
 
 .project-info,
@@ -309,4 +337,57 @@ textarea {
 
 #single-blog-description {
   padding: 1rem 5rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 1050px) {
+  .menu-container #menu-items {
+    display: none;
+  }
+
+  .menu-container a.hambuger-icon {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+
+  .single-blog-info {
+    width: 90%;
+  }
+
+  #single-blog-description {
+    padding: 1rem 1rem;
+  }
+
+  #menu-items.responsive {
+    position: relative;
+  }
+
+  .menubar.responsive {
+    grid-template-rows: auto auto;
+  }
+
+  .menu-menu-container.responsive {
+    display: block;
+  }
+
+  .menu-menu-container.responsive #menu-items {
+    text-align: left;
+    display: grid;
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  .menu-menu-container.responsive #menu-items li {
+    display: grid;
+  }
+
+  .menu-menu-container.responsive #menu-items li a {
+    margin: 0.2rem 0.9rem;
+  }
+
+  .menu-menu-container.responsive .login-btn {
+    margin: 0.2rem 0.9rem;
+  }
 }
