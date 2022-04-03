@@ -144,6 +144,7 @@ button a {
 /* Home */
 .header {
   text-align: center;
+
 }
 
 .title,
@@ -151,7 +152,7 @@ button a {
   text-align: left;
   display: inline-block;
   vertical-align: middle;
-  margin: 2rem;
+  margin: 0 2rem;
 }
 
 #resume-btn {
