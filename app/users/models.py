@@ -4,6 +4,6 @@ from flask_login import UserMixin
 
 class User(db.Model, CRUDMixin, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    password = db.Column(db.String(100))
     email = db.Column(db.String(100), unique=True)
     name = db.Column(db.String(100))
+    passwd = db.Column(db.String(300))
