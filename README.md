@@ -59,24 +59,26 @@ should be required to be posted.
 Display of links to my Github profile, email, Linkedin and PDF
 resume.
 
-## Features To do
-
-- [ ] 💡 Dark and light mode switcher
-- [ ] ➕ Blog
+## Features
+- [x] 🖼 Responsive design
+- [x] ➕ Blog
     - [x] Create
-    - [ ] Edit
     - [x] Delete 
-- [ ] 📁 Project
+- [x] 📁 Project
     - [x] Create
-    - [ ] Edit
     - [x] Delete 
 - [x] 🔒 Login/Authentication
-- [ ] 🔍 Search and filter blog entries TDB
-- [ ] 🎨 Background animations TBD
+    - [x] Register
+    - [x] Login  
+### To be implemented in the future
+- [ ] 💡 Dark and light mode switcher
+- [ ] 🔍 Search and filter blog entries
+- [ ] 🎨 Background animations
 
 ## Built in with
 
-- HTML
-- CSS
-- Javascript
 - Python (Flask)
+- Javascript
+- CSS
+- HTML
+
