@@ -9,25 +9,25 @@ app.app_context().push()
 # Projects
 projects = {
     '1': {
-        "name": "My portfolio",
-        "description": "Portfolio website made with Python & Flask",
-        "github": "https://github.com/cammarb/my-portfolio.git",
-        "image": "https://raw.githubusercontent.com/cammarb/my-portfolio/master/portfolio_screenshot.png"
+        "title": "My portfolio",
+        "description": "💻 Website containing all full-stack development projects, as well as blog posts.",
+        "gh_link": "https://github.com/cammarb/my-portfolio.git",
+        "image_link": "https://raw.githubusercontent.com/cammarb/my-portfolio/master/portfolio_screenshot.png"
     },
     '2': {
-        "name": "Yugi Decks",
+        "title": "Yugi Decks",
         "description": "Yu-Gi-Oh library using Yu-Gi-Oh's API",
-        "github": "https://github.com/cammarb/yugi-decks.git",
-        "image": "https://raw.githubusercontent.com/cammarb/yugi-decks/master/screenshot.png"
+        "gh_link": "https://github.com/cammarb/yugi-decks.git",
+        "image_link": "https://raw.githubusercontent.com/cammarb/yugi-decks/master/screenshot.png"
     }
 }
 
 for id, project in projects.items():
     new_project = Project(
-        id=id, title=project['name'],
+        id=id, title=project['title'],
         description=project['description'],
-        gh_link=project['github'],
-        image_link=project['image'])
+        gh_link=project['gh_link'],
+        image_link=project['image_link'])
     db.session.add(new_project)
 
 db.session.commit()
@@ -36,22 +36,10 @@ db.session.commit()
 # Blog
 blog_posts = {
     '1': {
-        "title": "Learning Flask development",
-        "content": "This is the content for Blog 1",
-        "picture_url": "https://www.muycanal.com/wp-content/uploads/2014/03/PCLinux.jpg"
-    },
-    '2': {
-        "title": "How to install Ubuntu 22.04 LTS Jammy Jellyfish",
-        "content": "This is the content for Blog 2",
-        "picture_url": "https://www.muycanal.com/wp-content/uploads/2014/03/PCLinux.jpg"
-
-    },
-    '3': {
-        "title": "Learning GTK4 for GNOME development",
-        "content": "This is the content for Blog 3",
-        "picture_url": "https://www.muycanal.com/wp-content/uploads/2014/03/PCLinux.jpg"
-
-    },
+        "title": "Learning Flask",
+        "content": "I am currently taking a course called 'Foundations of Web development' which required me to use Flask (Python microframework) to learn the basics of...well Web Development. What I am loving most about Flask is it's simplicity. It is also really lightweight and because you basically start from scratch and install just the tools you could need. It's been quite easy to learn Flask, and I believe all this learned knowledge will make it even easier for me to learn Django, which is a more popular Python framework, and it's on the top ten of most in-demand technologies for web programming this year.",
+        "picture_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/1200px-Flask_logo.svg.png"
+    }
 }
 
 for id, post in blog_posts.items():
