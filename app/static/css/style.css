@@ -23,6 +23,17 @@ header {
   padding: 0rem 2rem 2rem 2rem;
 }
 
+/* Pagination */
+#pagination {
+  margin: auto;
+  color: var(--black) !important;
+}
+
+#pagination a {
+  color: var(--black) !important;
+  text-decoration: none;
+}
+
 /* Navbar */
 .menubar {
   display: grid;
@@ -162,7 +173,7 @@ button a {
   padding-top: 0.8rem;
 }
 
-span {
+.programming-icon {
   color: var(--white);
   padding: 0.2rem;
 }

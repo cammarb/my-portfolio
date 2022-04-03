@@ -1,5 +1,3 @@
-from distutils.log import error
-from msilib.schema import Error
 from .models import User
 from flask import Blueprint, redirect, render_template, request, url_for
 from werkzeug.security import generate_password_hash, check_password_hash

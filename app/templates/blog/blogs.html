@@ -24,7 +24,7 @@
 {% endblock %}
 
 {% block content %}
-{% for blog in blogs %}
+{% for blog in blogs_pagination.items %}
 <div class="blog-post-container">
     <div class="blog-img-container">
         <img src="{{blog.picture_url}}" id="blog-img">
@@ -43,4 +43,20 @@
 
 </div>
 {% endfor %}
+
+<div id="pagination">
+    {% if blogs_pagination.prev_num %}
+    <a href="/blogs?page={{ blogs_pagination.prev_num }}">
+        <i class="fa-solid fa-arrow-left-long"></i>
+        Previous
+    </a>
+    {%endif%}
+    <span> - {{page_number}} - </span>
+    {% if blogs_pagination.next_num %}
+    <a href="/blogs?page={{ blogs_pagination.next_num }}">
+        Next
+        <i class="fa-solid fa-arrow-right-long"></i>
+    </a>
+    {%endif%}
+</div>
 {% endblock %}
