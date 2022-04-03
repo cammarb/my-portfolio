@@ -25,7 +25,7 @@ def post_register():
         new_user = User(
             name=request.form['name'],
             email=request.form['email'],
-            password=generate_password_hash(request.form['password'])
+            passwd=generate_password_hash(request.form['password'])
         )
         new_user.save()
         login_user(new_user)
@@ -47,7 +47,7 @@ def post_login():
         user = User.query.filter_by(email=request.form['email']).first()
         if not user:
             raise Exception('No user with the given email address was found.')
-        elif check_password_hash(request.form['password'], user.password):
+        elif check_password_hash(request.form['password'], user.passwd):
             raise Exception('Incorrect password.')
         login_user(user)
         return redirect(url_for('blog.blogs'))
