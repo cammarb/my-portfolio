@@ -7,13 +7,13 @@ blueprint = Blueprint('users', __name__)
 
 
 @blueprint.get('/register')
-@login_required
+# @login_required
 def get_register():
     return render_template('users/register.html')
 
 
 @blueprint.post('/register')
-@login_required
+# @login_required
 def post_register():
     try:
         if request.form.get('password') != request.form.get('password_confirmation'):
