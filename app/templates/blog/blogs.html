@@ -9,40 +9,41 @@
 
 
 {% block header %}
-<div>
-    <h1>
-        {% block title %}
-        Blog posts 📝
-        {% endblock %}
-    </h1>
-</div>
+<!-- <div> -->
+<h1>
+    {% block title %}
+    Blog posts 📝
+    {% endblock %}
+</h1>
+<!-- </div> -->
 {% if current_user.is_authenticated %}
-<div class="create-post">
-    <button><a href="blogs/new">Create a post</a></button>
-</div>
+<!-- <div class="create-post"> -->
+<button><a href="blogs/new">Create a post</a></button>
+<!-- </div> -->
 {% endif %}
 {% endblock %}
 
 {% block content %}
-{% for blog in blogs_pagination.items %}
-<div class="blog-post-container">
-    <div class="blog-img-container">
-        <img src="{{blog.picture_url}}" id="blog-img">
-    </div>
-    <div class="blog-info">
-        <h2 id="blog-title">
-            {{ blog.title }}
-        </h2>
-        <p id="blog-description">
-            {{ blog.content[0:100] }} ...
-        </p>
-        <div class="btn-container">
-            <button type="button"><a href="blogs/{{blog.id}}">Read more</a></button>
+<div class="blog-grid">
+    {% for blog in blogs_pagination.items %}
+    <div class="blog">
+        <div class="blog-img">
+            <img src="{{blog.picture_url}}">
+        </div>
+        <div class="blog-body">
+            <h2 id="blog-title">
+                {{ blog.title }}
+            </h2>
+            <p id="blog-description">
+                {{ blog.content[0:100] }} ...
+            </p>
+            <div class="btn-container">
+                <button type="button"><a href="blogs/{{blog.id}}">Read more</a></button>
+            </div>
         </div>
     </div>
-
+    {% endfor %}
 </div>
-{% endfor %}
 
 <div id="pagination">
     {% if blogs_pagination.prev_num %}

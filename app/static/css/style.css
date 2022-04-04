@@ -14,13 +14,19 @@
   padding: 0;
 }
 
+/* Header */
 header {
   display: grid;
+  gap: 1rem;
   grid-template-columns: auto auto;
-  margin: auto;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 0rem 2rem 2rem 2rem;
+}
+
+header div {
+  overflow: hidden;
+  padding: 1rem;
+  justify-self: center;
 }
 
 /* Pagination */
@@ -38,7 +44,7 @@ header {
 .menubar {
   display: grid;
   grid-template-columns: auto auto;
-  padding: 0 3rem;
+  padding: 0 2rem;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 0px 25px -17px var(--black);
@@ -50,7 +56,7 @@ header {
 }
 
 .hambuger-icon {
-  padding: 0 1rem;
+  padding: 0 0 0 1rem;
   color: var(--black);
   display: none;
 }
@@ -144,7 +150,6 @@ button a {
 /* Home */
 .header {
   text-align: center;
-
 }
 
 .title,
@@ -212,7 +217,28 @@ button a {
   padding: 1rem 2rem;
 }
 
-.blog-post-container,
+/* Blog Grid */
+.blog-grid {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 33rem;
+  grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+  align-items: center;
+}
+
+.blog {
+  overflow: hidden;
+  padding: 2rem;
+  justify-self: center;
+}
+
+.blog-img img {
+  width: 100%;
+  height: auto;
+}
+
+.blog-body {}
+
 .single-project-container {
   text-align: center;
   border-radius: 5px;
@@ -240,8 +266,7 @@ button a {
   margin-bottom: 0.8rem;
 }
 
-#project-img,
-#blog-img {
+#project-img {
   width: 400px;
 }
 
@@ -415,10 +440,32 @@ textarea {
 @media screen and (max-width: 700px) {
   form {
     width: 70vw !important;
-
   }
 
   .login-register {
     width: 70vw !important;
+  }
+
+  .blog-grid {
+    width: 100vw;
+  }
+
+  .blog {
+    padding: 0 0.5rem;
+  }
+
+  header {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+  }
+
+  header>button {
+    margin: 0 auto;
+  }
+
+  .menubar {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100vw;
   }
 }
