@@ -247,6 +247,7 @@ button a {
 .project-container {
   display: flex;
   text-align: center;
+  align-items: center;
   border-radius: 5px;
   padding: 1rem 9%;
   justify-content: center;
