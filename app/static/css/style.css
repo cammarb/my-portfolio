@@ -12,6 +12,7 @@
   font-family: "Fira Code", monospace;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* Header */
@@ -205,11 +206,11 @@ button a {
 }
 
 /* Projects & Blogs page */
-.create-project,
+/* .create-project,
 .create-post {
   padding-left: 2rem;
   margin-left: 2rem;
-}
+} */
 
 .single-project,
 .blog-post {
@@ -230,34 +231,39 @@ button a {
   overflow: hidden;
   padding: 2rem;
   justify-self: center;
+  text-align: center;
 }
 
 .blog-img img {
-  width: 100%;
+  width: 90%;
   height: auto;
 }
 
-.blog-body {}
+.blog-body {
+  margin-top: 0.5rem;
+}
 
-.single-project-container {
+/* Single Project */
+.project-container {
+  display: flex;
   text-align: center;
   border-radius: 5px;
-  padding: 1rem 2rem;
+  padding: 1rem 9%;
+  justify-content: center;
 }
 
 .project-info,
-.blog-info,
-.project-img-container,
-.blog-img-container {
+.project-img {
   text-align: left;
   display: inline-block;
   vertical-align: middle;
   margin: 1rem 2rem;
+  width: 50%;
 }
 
 .project-info,
 .blog-info {
-  width: 400px;
+  width: 50%;
   text-align: left;
 }
 
@@ -266,8 +272,8 @@ button a {
   margin-bottom: 0.8rem;
 }
 
-#project-img {
-  width: 400px;
+.project-img img {
+  width: 100%;
 }
 
 .project-links {
@@ -372,9 +378,6 @@ textarea {
 
 #delete-form {
   width: auto;
-  padding: 0;
-  padding-left: 2rem;
-  margin-left: 2rem;
 }
 
 #single-blog-description {
@@ -413,6 +416,7 @@ textarea {
   .menu-menu-container.responsive {
     display: block;
     padding-bottom: 2rem;
+    width: 100%;
   }
 
   .menu-menu-container.responsive #menu-items {
@@ -435,6 +439,22 @@ textarea {
   .login-status {
     margin: 0.2rem 0.9rem;
   }
+
+  #login-status {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+  }
+
+  .project-container {
+    flex-wrap: wrap;
+    padding: 1rem 0.2rem;
+  }
+
+  .project-img,
+  .project-info {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -455,6 +475,7 @@ textarea {
   }
 
   header {
+    text-align: center;
     grid-template-columns: auto;
     grid-template-rows: auto auto;
   }
@@ -467,5 +488,9 @@ textarea {
     padding-left: 0;
     padding-right: 0;
     width: 100vw;
+  }
+
+  .menubar>div {
+    padding: 0 10px;
   }
 }

@@ -8,24 +8,20 @@
 {% endblock %}
 
 {% block header %}
-<div>
-    <h1>
-        {% block title %}
-        Projects 📁
-        {% endblock %}
-    </h1>
-</div>
+<h1>
+    {% block title %}
+    Projects 📁
+    {% endblock %}
+</h1>
 {% if current_user.is_authenticated %}
-<div class="create-project">
-    <button><a href="projects/new">Add a project</a></button>
-</div>
+<button><a href="projects/new">Add a project</a></button>
 {% endif %}
 {% endblock %}
 
 
 {% block content %}
 {% for project in projects %}
-<div class="single-project-container">
+<div class="project-container">
     <div class="project-info">
         <h2 id="project-title">{{ project.title }}</h2>
         <p id="project-description">
@@ -38,8 +34,8 @@
             </a>
         </div>
     </div>
-    <div class="project-img-container">
-        <img src="{{project.image_link}}" alt="project screenshot" id="project-img" title="project screenshot">
+    <div class="project-img">
+        <img src="{{project.image_link}}" alt="project screenshot" title="project screenshot">
     </div>
 </div>
 {% endfor %}

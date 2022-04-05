@@ -9,17 +9,13 @@
 
 
 {% block header %}
-<!-- <div> -->
 <h1>
     {% block title %}
     Blog posts 📝
     {% endblock %}
 </h1>
-<!-- </div> -->
 {% if current_user.is_authenticated %}
-<!-- <div class="create-post"> -->
 <button><a href="blogs/new">Create a post</a></button>
-<!-- </div> -->
 {% endif %}
 {% endblock %}
 

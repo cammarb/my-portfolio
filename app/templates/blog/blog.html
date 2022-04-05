@@ -9,16 +9,14 @@
 {% endblock %}
 
 {% block header %}
-<div>
-    <h1>
-        {% block title %} {{ blog.title }} {% endblock %}
-    </h1>
-</div>
+<h1>
+    {% block title %} {{ blog.title }} {% endblock %}
+</h1>
 {% if current_user.is_authenticated %}
 <form method="post" id="delete-form">
-    <div class="btn-container" id="delete-btn">
-        <input type="submit" value="Delete" class="input-btn">
-    </div>
+    <!-- <div class="btn-container" id="delete-btn"> -->
+    <input type="submit" value="Delete" class="input-btn">
+    <!-- </div> -->
 </form>
 {%endif%}
 {% endblock %}
