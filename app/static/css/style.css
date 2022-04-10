@@ -13,6 +13,7 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Header */
@@ -135,9 +136,10 @@ button a {
 
 /* Body */
 .container {
-  width: 100%;
+  /* max-width: 1440px; */
   margin: 0 auto;
   display: grid;
+  box-sizing: border-box;
   justify-content: center;
   padding: 5vh 0 5vh 0;
 }
@@ -161,6 +163,11 @@ button a {
   margin: 0 2rem;
 }
 
+.img-container img {
+  width: 100%;
+  max-width: 500px;
+}
+
 #resume-btn {
   text-decoration: none;
 }
@@ -178,6 +185,13 @@ button a {
 
 #languages {
   padding-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#languages h5 {
+  width: fit-content;
+  margin-right: 0.3rem;
 }
 
 .programming-icon {
@@ -186,7 +200,7 @@ button a {
 }
 
 #py {
-  background-color: rgb(24, 101, 216);
+  background-color: rgb(26, 102, 218);
 
 }
 
@@ -379,6 +393,17 @@ textarea {
 }
 
 /* Responsive */
+@media screen and (min-width: 1050px) {
+  .container {
+    padding: 5vh 10% 5vh 10%;
+  }
+
+  .menubar {
+    padding: 0 10%;
+  }
+}
+
+
 @media screen and (max-width: 1050px) {
   .menu-container #menu-items {
     display: none;
