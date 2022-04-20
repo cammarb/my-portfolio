@@ -12,6 +12,8 @@
 <h1>
     {% block title %} {{ blog.title }} {% endblock %}
 </h1>
+<h4>{{user.name}}</h4>
+<h5>{{blog.date}}</h5>
 {% if current_user.is_authenticated %}
 <form method="post" id="delete-form">
     <!-- <div class="btn-container" id="delete-btn"> -->

@@ -1,6 +1,8 @@
+import imp
 from flask import Blueprint, redirect, render_template, request, url_for, current_app
-from .models import Blog
-from flask_login import login_required
+from .models import Blog, UserPost
+from app.users.models import User
+from flask_login import login_required, current_user, user_accessed
 
 blueprint = Blueprint('blog', __name__)
 
@@ -10,8 +12,6 @@ blueprint = Blueprint('blog', __name__)
 @blueprint.route('/blogs')
 def blogs():
     page_number = request.args.get('page', 1, type=int)
-    # print('=> Page number:', page_number)
-    items_per_page = 5
     blogs_pagination = Blog.query.paginate(
         page_number, current_app.config['POSTS_PER_PAGE'])
     return render_template('blog/blogs.html', blogs_pagination=blogs_pagination, page_number=page_number)
@@ -20,6 +20,8 @@ def blogs():
 @blueprint.route('/blogs/<id>', methods=('GET', 'POST'))
 def blog(id):
     blog = Blog.query.get(id)
+    user_post = UserPost.query.filter_by(post_id=blog.id).first()
+    user = User.query.get(user_post.user_id)
 
     if request.method == 'POST':
         blog.delete()
@@ -27,7 +29,8 @@ def blog(id):
 
     return render_template(
         'blog/blog.html',
-        blog=blog
+        blog=blog,
+        user=user
     )
 
 
@@ -56,7 +59,9 @@ def new_blog():
             picture_url=request.form['picture_url']
         )
         new_post.save()
-        return redirect(url_for('blog.blog', id=new_post.id))
+        new_post.blog_user.append(current_user)
+        new_post.save()
+        return redirect(url_for('blog.blogs'))
 
     except Exception as error_message:
         error = error_message or 'An error occurred while creating a post. Please make sure to enter valid data.'
