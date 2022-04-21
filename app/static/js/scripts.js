@@ -1,11 +1,16 @@
 /* Theme Switcher */
 // the website will allways start in light mode
 // so the dark mode is disabled by default
-var darkMode = false;
-
-function toggleTheme() {
-    darkMode = true;
+// Dark mode gets created if it doesn’t exist in the LocalStorage 
+if (localStorage.getItem('darkMode') === null) {
+    localStorage.setItem('darkMode', "false");
 }
+
+function activateDarkMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
+
 
 /* Hamburger Menu */
 

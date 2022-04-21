@@ -6,6 +6,7 @@
   --black: rgb(39, 39, 39);
   --white: #fff;
   --grey: rgb(83, 83, 83);
+  --light-grey: rgb(124, 124, 124);
 }
 
 * {
@@ -14,6 +15,29 @@
   padding: 0;
   overflow-x: hidden;
   box-sizing: border-box;
+  color: var(--black);
+}
+
+
+.light-mode {
+  background: var(--white);
+  color: var(--black);
+}
+
+.dark-mode {
+  background: var(--black) !important;
+  color: var(--white) !important;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode a {
+  color: var(--white);
 }
 
 /* Header */
@@ -34,11 +58,9 @@ header div {
 /* Pagination */
 #pagination {
   margin: auto;
-  color: var(--black) !important;
 }
 
 #pagination a {
-  color: var(--black) !important;
   text-decoration: none;
 }
 
@@ -49,7 +71,6 @@ header div {
   padding: 0 2rem;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0px 0px 25px -17px var(--black);
 }
 
 .menu-menu-container {
@@ -59,10 +80,10 @@ header div {
 
 .hambuger-icon {
   padding: 0 0 0 1rem;
-  color: var(--black);
   display: none;
 }
 
+/* Light mode button */
 button {
   background-color: var(--black);
   border: none;
@@ -82,6 +103,21 @@ button a {
   font-size: larger;
 }
 
+/* Dark mode button */
+.dark-mode button {
+  background-color: var(--white);
+}
+
+.dark-mode button:hover {
+  background-color: var(--light-grey) !important;
+}
+
+.dark-mode button a {
+  color: var(--black) !important;
+}
+
+/****/
+
 .home-container {
   display: inline-block;
   margin: 0.9rem;
@@ -97,7 +133,7 @@ button a {
 
 .home-container a {
   text-decoration: none;
-  color: rgb(39, 39, 39);
+
 }
 
 #menu-items {
@@ -111,7 +147,6 @@ button a {
 
 #menu-item {
   text-decoration: none;
-  color: rgb(39, 39, 39);
   margin-left: 50px;
   transition: 0.3s;
 }
@@ -179,7 +214,6 @@ button a {
 
 #github-link a {
   text-decoration: none;
-  color: rgb(39, 39, 39);
   font-weight: 600;
 }
 
@@ -195,28 +229,28 @@ button a {
 }
 
 .programming-icon {
-  color: var(--white);
+  color: var(--white) !important;
   padding: 0.2rem;
+}
+
+.programming-icon i {
+  color: var(--white) !important;
 }
 
 #py {
   background-color: rgb(26, 102, 218);
-
 }
 
 #cs {
   background-color: rgb(149, 54, 228);
-
 }
 
 #js {
-  background-color: rgb(255, 233, 38);
-  color: var(--black);
+  background-color: rgb(255, 204, 38);
 }
 
 #java {
   background-color: rgb(236, 70, 70);
-
 }
 
 .single-project,
@@ -290,12 +324,10 @@ button a {
 
 #github-icon {
   font-size: 30px;
-  color: rgb(39, 39, 39);
 }
 
 .repo-link {
   text-decoration: none;
-  color: var(--black);
   font-size: 16px;
 }
 
@@ -314,7 +346,6 @@ button a {
 
 #links-list li a {
   text-decoration: none !important;
-  color: rgb(39, 39, 39);
 }
 
 
