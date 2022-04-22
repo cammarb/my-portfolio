@@ -3,10 +3,12 @@
 
 /* Defaults */
 :root {
-  --black: rgb(39, 39, 39);
-  --white: #fff;
-  --grey: rgb(83, 83, 83);
-  --light-grey: rgb(124, 124, 124);
+  --black: rgb(30, 30, 30);
+  --white: rgb(239, 239, 239);
+  --green: rgb(13, 147, 69);
+  --light-green: rgb(44, 193, 106);
+  --light-grey: rgb(142, 142, 142);
+  --grey: rgb(94, 94, 94);
 }
 
 * {
@@ -18,15 +20,17 @@
   color: var(--black);
 }
 
-
-.light-mode {
-  background: var(--white);
-  color: var(--black);
-}
-
 .dark-mode {
   background: var(--black) !important;
   color: var(--white) !important;
+}
+
+.dark-mode #moon-icon {
+  display: block;
+}
+
+.dark-mode #sun-icon {
+  display: none;
 }
 
 .dark-mode h1,
@@ -36,8 +40,13 @@
 .dark-mode h5,
 .dark-mode h6,
 .dark-mode p,
-.dark-mode a {
+.dark-mode a,
+.dark-mode i {
   color: var(--white);
+}
+
+#moon-icon {
+  display: none;
 }
 
 /* Header */
@@ -85,7 +94,7 @@ header div {
 
 /* Light mode button */
 button {
-  background-color: var(--black);
+  background-color: var(--green);
   border: none;
   border-radius: 0.25rem;
   width: 150px;
@@ -101,19 +110,16 @@ button a {
   text-decoration: none;
   color: var(--white) !important;
   font-size: larger;
+  font-weight: bolder;
 }
 
 /* Dark mode button */
 .dark-mode button {
-  background-color: var(--white);
+  background-color: var(--light-green);
 }
 
 .dark-mode button:hover {
   background-color: var(--light-grey) !important;
-}
-
-.dark-mode button a {
-  color: var(--black) !important;
 }
 
 /****/
