@@ -102,7 +102,7 @@ button {
   transition: 0.5s;
 }
 
-button:hover {
+.btn-container button:hover {
   background-color: var(--grey);
 }
 
@@ -118,7 +118,7 @@ button a {
   background-color: var(--light-green);
 }
 
-.dark-mode button:hover {
+.dark-mode .btn-container button:hover {
   background-color: var(--light-grey) !important;
 }
 
