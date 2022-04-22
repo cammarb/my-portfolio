@@ -9,6 +9,7 @@
   --light-green: rgb(44, 193, 106);
   --light-grey: rgb(142, 142, 142);
   --grey: rgb(94, 94, 94);
+  --foreground: var(--black);
 }
 
 * {
@@ -23,6 +24,7 @@
 .dark-mode {
   background: var(--black) !important;
   color: var(--white) !important;
+  --foreground: var(--white);
 }
 
 .dark-mode #moon-icon {
@@ -363,16 +365,18 @@ form {
 }
 
 input {
-  height: 25px;
+  height: 32px;
   width: inherit;
   padding: 5px;
   margin-top: 0.5rem;
+  color: var(--foreground);
 }
 
 .input-btn {
-  background-color: var(--black);
+  background-color: var(--green);
   color: var(--white);
   border: none;
+  font-weight: bolder;
   border-radius: 0.25rem;
   width: 150px;
   height: 40px;
@@ -392,7 +396,7 @@ textarea {
 }
 
 .input-container {
-  width: inherit;
+  width: 100%;
   padding-bottom: 1rem;
 }
 
