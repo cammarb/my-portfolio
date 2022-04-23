@@ -20,6 +20,7 @@
   overflow-x: hidden;
   box-sizing: border-box;
   color: var(--foreground);
+  transition: background-color 0.5s ease-in-out;
 }
 
 /* Buttons */
