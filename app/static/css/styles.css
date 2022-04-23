@@ -95,6 +95,8 @@ header div {
   align-items: center;
   justify-content: space-between;
   width: inherit;
+  max-width: 1900px;
+  margin: 0 auto;
 }
 
 .menu-menu-container {
