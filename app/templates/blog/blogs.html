@@ -21,6 +21,8 @@
 
 {% block content %}
 <div class="blog-grid">
+    {% if blogs_pagination.items %}
+
     {% for blog in blogs_pagination.items %}
     <div class="blog">
         <div class="blog-img">
@@ -39,8 +41,12 @@
         </div>
     </div>
     {% endfor %}
+    {% else %}
+    <h4 style="margin: 0 auto;">No posts yet</h4>
+    {% endif %}
 </div>
 
+{% if blogs_pagination.items %}
 <div id="pagination">
     {% if blogs_pagination.prev_num %}
     <a href="/blogs?page={{ blogs_pagination.prev_num }}">
@@ -56,4 +62,5 @@
     </a>
     {%endif%}
 </div>
+{% endif %}
 {% endblock %}
