@@ -23,10 +23,30 @@
   color: var(--black);
 }
 
-body {
-  width: 100%;
+/* Buttons */
+/* Light mode button */
+button {
+  background-color: var(--light-green);
+  border: none;
+  border-radius: 0.25rem;
+  width: 150px;
+  height: 40px;
+  transition: 0.5s;
 }
 
+.btn-container button:hover {
+  background-color: var(--grey);
+}
+
+button a {
+  text-decoration: none;
+  color: var(--white) !important;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+
+/* Dark Mode */
 .dark-mode {
   background: var(--black) !important;
   color: var(--white) !important;
@@ -54,13 +74,117 @@ body {
   color: var(--white);
 }
 
-#moon-icon {
+/* Dark mode button */
+.dark-mode button {
+  background-color: var(--light-green);
+}
+
+.dark-mode .btn-container button:hover {
+  background-color: var(--light-grey) !important;
+}
+
+/* Navigation Bar */
+.menubar {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 0 2rem;
+  align-items: center;
+  justify-content: space-between;
+  width: inherit;
+  max-width: 1900px;
+  margin: 0 auto;
+}
+
+.menu-menu-container {
+  display: none;
+  grid-template-columns: auto;
+}
+
+.hambuger-icon {
+  padding: 0 0 0 1rem;
   display: none;
 }
 
 #tilde {
   color: var(--blue);
   font-weight: bold;
+}
+
+/* Moon icon only shows when dark mode is activated */
+#moon-icon {
+  display: none;
+}
+
+#menu-items {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+#menu-items li {
+  display: inline;
+}
+
+#menu-item {
+  text-decoration: none;
+  margin-left: 50px;
+  transition: 0.3s;
+}
+
+#menu-item:hover {
+  font-weight: bolder;
+}
+
+.menu-container {
+  float: right;
+  margin: 0.9rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+}
+
+.home-container {
+  display: inline-block;
+  margin: 0.9rem;
+}
+
+.home-container a {
+  text-decoration: none;
+}
+
+#theme-swticher {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  padding-left: 1rem;
+}
+
+.login-btn {
+  margin-left: 2rem;
+  margin-right: 1rem;
+  width: 100px;
+}
+
+/************************/
+
+/* Body */
+body {
+  width: 100%;
+}
+
+.container {
+  /* max-width: 1440px; */
+  margin: 0 auto;
+  display: grid;
+  box-sizing: border-box;
+  justify-content: center;
+  padding: 5vh 0 5vh 0;
+}
+
+.btn-container {
+  margin: 25px auto;
+  display: flex;
+  justify-content: center;
 }
 
 /* Header */
@@ -85,127 +209,6 @@ header div {
 
 #pagination a {
   text-decoration: none;
-}
-
-/* Navbar */
-.menubar {
-  display: grid;
-  grid-template-columns: auto auto;
-  padding: 0 2rem;
-  align-items: center;
-  justify-content: space-between;
-  width: inherit;
-  max-width: 1900px;
-  margin: 0 auto;
-}
-
-.menu-menu-container {
-  display: none;
-  grid-template-columns: auto;
-}
-
-.hambuger-icon {
-  padding: 0 0 0 1rem;
-  display: none;
-}
-
-/* Light mode button */
-button {
-  background-color: var(--green);
-  border: none;
-  border-radius: 0.25rem;
-  width: 150px;
-  height: 40px;
-  transition: 0.5s;
-}
-
-.btn-container button:hover {
-  background-color: var(--grey);
-}
-
-button a {
-  text-decoration: none;
-  color: var(--white) !important;
-  font-size: larger;
-  font-weight: bolder;
-}
-
-/* Dark mode button */
-.dark-mode button {
-  background-color: var(--light-green);
-}
-
-.dark-mode .btn-container button:hover {
-  background-color: var(--light-grey) !important;
-}
-
-/****/
-
-.home-container {
-  display: inline-block;
-  margin: 0.9rem;
-}
-
-.menu-container {
-  float: right;
-  margin: 0.9rem;
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: center;
-}
-
-.home-container a {
-  text-decoration: none;
-
-}
-
-#menu-items {
-  list-style-type: none;
-  overflow: hidden;
-}
-
-#menu-items li {
-  display: inline;
-}
-
-#menu-item {
-  text-decoration: none;
-  margin-left: 50px;
-  transition: 0.3s;
-}
-
-#menu-item:hover {
-  font-weight: bolder;
-}
-
-#theme-swticher {
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 50px;
-  padding-left: 1rem;
-}
-
-.login-btn {
-  margin-left: 2rem;
-  margin-right: 1rem;
-  width: 100px;
-}
-
-/* Body */
-.container {
-  /* max-width: 1440px; */
-  margin: 0 auto;
-  display: grid;
-  box-sizing: border-box;
-  justify-content: center;
-  padding: 5vh 0 5vh 0;
-}
-
-.btn-container {
-  margin: 25px auto;
-  display: flex;
-  justify-content: center;
 }
 
 /* Home */
