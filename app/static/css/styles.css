@@ -4,8 +4,7 @@
 /* Variables */
 :root {
   --black: rgb(30, 30, 30);
-  --white: rgb(236, 236, 236);
-  --green: rgb(13, 147, 69);
+  --white: rgb(248, 248, 248);
   --light-green: rgb(44, 193, 106);
   --light-grey: rgb(142, 142, 142);
   --grey: rgb(94, 94, 94);
@@ -20,7 +19,7 @@
   padding: 0;
   overflow-x: hidden;
   box-sizing: border-box;
-  color: var(--black);
+  color: var(--foreground);
 }
 
 /* Buttons */
@@ -32,6 +31,7 @@ button {
   width: 150px;
   height: 40px;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .btn-container button:hover {
@@ -43,6 +43,10 @@ button a {
   color: var(--white) !important;
   font-size: larger;
   font-weight: bolder;
+}
+
+form button:hover {
+  background-color: var(--grey);
 }
 
 
@@ -81,6 +85,10 @@ button a {
 
 .dark-mode .btn-container button:hover {
   background-color: var(--light-grey) !important;
+}
+
+.dark-mode .input-btn {
+  background-color: var(--light-green);
 }
 
 /* Navigation Bar */
@@ -163,6 +171,11 @@ button a {
   margin-left: 2rem;
   margin-right: 1rem;
   width: 100px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: var(--grey);
 }
 
 /************************/
@@ -391,7 +404,7 @@ input {
 }
 
 .input-btn {
-  background-color: var(--green);
+  background-color: var(--light-green);
   color: var(--white);
   border: none;
   font-weight: bolder;
@@ -514,7 +527,7 @@ textarea {
   }
 
   .menu-menu-container.responsive .login-btn,
-  .login-status {
+  #login-status {
     margin: 0.2rem 0.9rem;
   }
 
