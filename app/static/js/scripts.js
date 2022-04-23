@@ -56,3 +56,12 @@ function toggleMenu() {
         x.className = "menu-menu-container";
     }
 }
+
+
+/* Blinking Cursor */
+window.addEventListener("load", function () {
+    var b = document.getElementById('cursor');
+    setInterval(function () {
+        b.style.display = (b.style.display == 'none' ? '' : 'none');
+    }, 500);
+}, false);
