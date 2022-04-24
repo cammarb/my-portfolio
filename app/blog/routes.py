@@ -50,7 +50,7 @@ def get_blogs():
 def new_blog():
 
     try:
-        create_post(request.form, current_user)
+        save_post(request.form, current_user)
         return redirect(url_for('blog.blogs'))
 
     except Exception as error_message:

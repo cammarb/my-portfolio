@@ -1,7 +1,7 @@
 from .models import Blog
 
 
-def create_post(req_form, user):
+def save_post(req_form, user):
     if not req_form.get('title'):
         raise Exception(
             'The blog post must have a title.')
