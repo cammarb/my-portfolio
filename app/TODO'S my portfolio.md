@@ -40,7 +40,7 @@
 
 ### Refactor code
 - [x] Blog routes
-- [ ] Projects routes
+- [x] Projects routes
 
 ----------------------------
 
