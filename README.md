@@ -64,14 +64,16 @@ resume.
 - [x] ➕ Blog
     - [x] Create
     - [x] Delete 
+    - [ ] Edit
 - [x] 📁 Project
     - [x] Create
     - [x] Delete 
+    - [ ] Edit
 - [x] 🔒 Login/Authentication
     - [x] Register
     - [x] Login  
 ### To be implemented in the future
-- [ ] 💡 Dark and light mode switcher
+- [x] 💡 Dark and light mode switcher
 - [ ] 🔍 Search and filter blog entries
 - [ ] 🎨 Background animations
 
