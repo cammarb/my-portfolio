@@ -8,8 +8,10 @@
   --light-green: rgb(44, 193, 106);
   --light-grey: rgb(142, 142, 142);
   --grey: rgb(94, 94, 94);
+  --dark-grey: rgb(70, 70, 70);
   --blue: rgb(66, 116, 255);
   --foreground: var(--black);
+  --input-background: var(--white);
 }
 
 /* Defaults */
@@ -27,6 +29,7 @@
 /* Light mode button */
 button {
   background-color: var(--light-green);
+  color: var(--white);
   border: none;
   border-radius: 0.25rem;
   width: 150px;
@@ -39,11 +42,12 @@ button {
   background-color: var(--grey);
 }
 
-button a {
+a {
   text-decoration: none;
-  color: var(--white) !important;
-  font-size: larger;
-  font-weight: bolder;
+}
+
+#page-link {
+  color: var(--white);
 }
 
 form button:hover {
@@ -56,6 +60,7 @@ form button:hover {
   background: var(--black) !important;
   color: var(--white) !important;
   --foreground: var(--white);
+  --input-background: var(--black);
 }
 
 .dark-mode #moon-icon {
@@ -90,6 +95,11 @@ form button:hover {
 
 .dark-mode .input-btn {
   background-color: var(--light-green);
+}
+
+.dark-mode input,
+.dark-mode textarea {
+  background-color: var(--dark-grey);
 }
 
 /* Navigation Bar */
@@ -402,9 +412,11 @@ input {
   padding: 5px;
   margin-top: 0.5rem;
   color: var(--foreground);
+  border-radius: 5px;
+  border: 1px solid var(--light-grey);
 }
 
-.input-btn {
+/* .input-btn {
   background-color: var(--light-green);
   color: var(--white);
   border: none;
@@ -413,13 +425,16 @@ input {
   width: 150px;
   height: 40px;
   cursor: pointer;
-}
+} */
 
 textarea {
   padding: 5px;
   width: inherit;
   height: 40vh;
   margin-top: 0.5rem;
+  color: var(--foreground);
+  border-radius: 5px;
+  border: 1px solid var(--light-grey);
 }
 
 #description {
