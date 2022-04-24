@@ -10,20 +10,22 @@
 {% block header %}
 <div>
     <h1>
-        {% block title %} {{ project.name }} {% endblock %}
+        {% block title %} {{ project.title }} {% endblock %}
     </h1>
 </div>
-<form method="post">
-    <div class="btn-container">
-        <input type="submit" value="Delete">
-    </div>
-</form>
+<div id="edit-btn">
+    <form method="post" id="delete-form">
+        <button type="submit" id="delete-btn">Delete</button>
+    </form>
+    <a href="/projects/{{project.id}}/edit">
+        <button>Edit</button>
+    </a>
+</div>
 {% endblock %}
 
 {% block content %}
 <div class="single-project">
     <div class="project-info">
-        <h1 id="project-title"> {{ project.title }} </h1>
         <div class="project-img-container">
             <img src="{{project.image_link}}" alt="project screenshot" id="project-img" title="project screenshot"
                 id="project-img">
