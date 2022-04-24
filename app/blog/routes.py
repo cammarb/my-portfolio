@@ -1,6 +1,6 @@
 import imp
 from flask import Blueprint, redirect, render_template, request, url_for, current_app
-from .models import Blog, UserPost
+from .models import Blog
 from app.users.models import User
 from flask_login import login_required, current_user, user_accessed
 
@@ -20,8 +20,7 @@ def blogs():
 @blueprint.route('/blogs/<id>', methods=('GET', 'POST'))
 def blog(id):
     blog = Blog.query.get(id)
-    user_post = UserPost.query.filter_by(post_id=blog.id).first()
-    user = User.query.get(user_post.user_id)
+    user = User.query.get(blog.user_id)
 
     if request.method == 'POST':
         blog.delete()
@@ -56,10 +55,8 @@ def new_blog():
         new_post = Blog(
             title=request.form['title'],
             content=request.form['content'],
-            picture_url=request.form['picture_url']
-        )
-        new_post.save()
-        new_post.blog_user.append(current_user)
+            picture_url=request.form['picture_url'],
+            user_id=current_user.id)
         new_post.save()
         return redirect(url_for('blog.blogs'))
 
