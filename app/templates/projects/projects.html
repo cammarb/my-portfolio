@@ -14,7 +14,9 @@
     {% endblock %}
 </h1>
 {% if current_user.is_authenticated %}
-<button><a href="projects/new">Add a project</a></button>
+<a href="projects/new">
+    <button>Add a project</button>
+</a>
 {% endif %}
 {% endblock %}
 

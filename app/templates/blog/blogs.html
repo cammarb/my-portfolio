@@ -15,7 +15,9 @@
     {% endblock %}
 </h1>
 {% if current_user.is_authenticated %}
-<button><a href="blogs/new">Create a post</a></button>
+<a href="blogs/new" id="page-link">
+    <button>Create a post</button>
+</a>
 {% endif %}
 {% endblock %}
 
@@ -36,7 +38,9 @@
                 {{ blog.content[0:100] }} ...
             </p>
             <div class="btn-container">
-                <button type="button"><a href="blogs/{{blog.id}}">Read more</a></button>
+                <a href="blogs/{{blog.id}}" id="page-link">
+                    <button type="button">Read more</button>
+                </a>
             </div>
         </div>
     </div>
