@@ -12,6 +12,7 @@
   --blue: rgb(66, 116, 255);
   --foreground: var(--black);
   --input-background: var(--white);
+  --red: rgb(255, 89, 89);
 }
 
 /* Defaults */
@@ -52,6 +53,10 @@ a {
 
 form button:hover {
   background-color: var(--grey);
+}
+
+#edit-btn {
+  text-align: center;
 }
 
 
@@ -460,7 +465,7 @@ textarea {
 
 #delete-btn {
   justify-content: flex-end;
-
+  background-color: var(--red) !important;
 }
 
 .post-img-container {
@@ -474,6 +479,7 @@ textarea {
 
 #delete-form {
   width: auto;
+  padding-bottom: 0.2rem;
 }
 
 #single-blog-description {
