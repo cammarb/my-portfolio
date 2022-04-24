@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block nav %}
+{{ super() }}
+{% endblock %}
+
+{% block header %}
+<h2>
+  {% block title %}
+  New Blog Post
+  {% endblock %}
+</h2>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+  <div class="input-container">
+    <label for="title">Title:</label>
+    <br>
+    <input type="text" name="title" id="title" placeholder="Learning Flask" value="{{ request.form['title'] }}">
+  </div>
+  <div class="input-container">
+    <label for="content">Content:</label>
+    <br>
+    <textarea name="content" id="content" placeholder="Insert text here...">{{ request.form['content'] }}</textarea>
+  </div>
+  <div class="input-container">
+    <label for="picture_url">Header image URL:</label>
+    <br>
+    <input type="text" name="picture_url" id="picture_url" placeholder="https://www.image.com/image.jpg"
+      value="{{ request.form['picture_url'] }}">
+  </div>
+  <div class="btn-container">
+    <button type="submit" class="input-btn">Add</button>
+  </div>
+</form>
+
+{% endblock %}
