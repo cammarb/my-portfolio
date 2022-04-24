@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block header %}
-<div class="">
+<div>
     <h1>
         {% block title %} {{ blog.title }} {% endblock %}
     </h1>
@@ -17,11 +17,14 @@
     <h6>{{blog.date}}</h6>
 </div>
 {% if current_user.is_authenticated %}
-<form method="post" id="delete-form">
-    <!-- <div class="btn-container" id="delete-btn"> -->
-    <button type="submit">Delete</button>
-    <!-- </div> -->
-</form>
+<div id="edit-btn">
+    <form method="post" id="delete-form">
+        <button type="submit" id="delete-btn">Delete</button>
+    </form>
+    <a href="/blogs/{{blog.id}}/edit">
+        <button>Edit</button>
+    </a>
+</div>
 {%endif%}
 {% endblock %}
 
