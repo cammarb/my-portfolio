@@ -10,7 +10,7 @@
 {% block header %}
 <h2>
   {% block title %}
-  New Blog Post
+  Edit Post
   {% endblock %}
 </h2>
 {% endblock %}
@@ -20,21 +20,20 @@
   <div class="input-container">
     <label for="title">Title:</label>
     <br>
-    <input type="text" name="title" id="title" placeholder="Learning Flask" value="{{ request.form['title'] }}">
+    <input type="text" name="title" id="title" value="{{blog.title}}">
   </div>
   <div class="input-container">
     <label for="content">Content:</label>
     <br>
-    <textarea name="content" id="content" placeholder="Insert text here...">{{ request.form['content'] }}</textarea>
+    <textarea name="content" id="content">{{blog.content}}</textarea>
   </div>
   <div class="input-container">
     <label for="picture_url">Header image URL:</label>
     <br>
-    <input type="text" name="picture_url" id="picture_url" placeholder="https://www.image.com/image.jpg"
-      value="{{ request.form['picture_url'] }}">
+    <input type="text" name="picture_url" id="picture_url" value="{{ blog.picture_url }}">
   </div>
   <div class="btn-container">
-    <button type="submit" class="input-btn">Add</button>
+    <button type="submit" class="input-btn">Save</button>
   </div>
 </form>
 

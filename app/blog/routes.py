@@ -36,6 +36,21 @@ def delete_blog(id):
     blog.delete()
     return redirect(url_for('blog.blogs'))
 
+# Edit current blog post
+
+
+@blueprint.get('/blogs/<id>/edit')
+def get_edit_blog(id):
+    blog = Blog.query.get(id)
+    return render_template('blog/edit_blog.html', blog=blog)
+
+
+@blueprint.post('/blogs/<id>/edit')
+def edit_blog(id):
+    blog = Blog.query.get(id)
+    save_post(request.form, current_user)
+    return redirect(url_for('blog.get_blog', id=blog))
+
 
 @blueprint.get('/blogs/new')
 @login_required
@@ -48,7 +63,6 @@ def get_blogs():
 @blueprint.post('/blogs/new')
 @login_required
 def new_blog():
-
     try:
         save_post(request.form, current_user)
         return redirect(url_for('blog.blogs'))
