@@ -16,7 +16,8 @@
 	- [x] Max-width
 	- [x] Always in center
 - [x] Dark Mode smooth transition
-- [ ] Blog posts grid responsive
+- [x] Blog posts grid responsive
+- [x] Projects edit form responsive
 
 ----------------------------
 
@@ -46,7 +47,7 @@
 
 ### CRUD
 -[x] Blog - add edit option 
--[ ] Post - add edit option 
+-[x] Post - add edit option 
 -[x] Post - add single view
 
 
