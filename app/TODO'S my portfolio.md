@@ -45,9 +45,9 @@
 ----------------------------
 
 ### CRUD
--[ ] Blog - add edit option 
+-[x] Blog - add edit option 
 -[ ] Post - add edit option 
--[ ] Post - add single view
+-[x] Post - add single view
 
 
 
