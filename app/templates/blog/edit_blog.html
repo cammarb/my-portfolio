@@ -25,18 +25,18 @@
   <div class="input-container">
     <label for="title">Title:</label>
     <br>
-    <input type="text" name="title" id="title" value="{{ request.form['title'] or blog['title'] }}">
+    <input type="text" name="title" id="title" value="{{ request.form['title'] or blog.title }}">
   </div>
   <div class="input-container">
     <label for="content">Content:</label>
     <br>
-    <textarea name="content" id="content">{{ request.form['content'] or blog['content'] }}</textarea>
+    <textarea name="content" id="content">{{ request.form['content'] or blog.content }}</textarea>
   </div>
   <div class="input-container">
     <label for="picture_url">Header image URL:</label>
     <br>
     <input type="text" name="picture_url" id="picture_url"
-      value="{{ request.form['picture_url'] or blog['picture_url'] }}">
+      value="{{ request.form['picture_url'] or blog.picture_url }}">
   </div>
   <div class="btn-container">
     <button type="submit" class="input-btn">Save</button>
