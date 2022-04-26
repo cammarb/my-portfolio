@@ -223,12 +223,14 @@ header {
   grid-template-columns: auto auto;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  width: 50vw;
 }
 
 header div {
   overflow: hidden;
-  padding: 1rem;
   justify-self: center;
+  /* width: 50%; */
 }
 
 /* Pagination */
@@ -243,6 +245,7 @@ header div {
 /* Home */
 .header {
   text-align: center;
+  width: 100%;
 }
 
 .title,
@@ -255,7 +258,7 @@ header div {
 
 .img-container img {
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
 }
 
 #resume-btn {
@@ -318,8 +321,8 @@ header div {
 .blog-grid {
   display: grid;
   gap: 1rem;
-  grid-auto-rows: 33rem;
-  grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+  grid-auto-rows: 23rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   align-items: center;
 }
 
@@ -378,7 +381,7 @@ header div {
 }
 
 #github-icon {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .repo-link {
@@ -387,12 +390,17 @@ header div {
 }
 
 /* Contact page */
+.contact-container {
+  text-align: center;
+}
+
 #links-list {
-  margin-top: 2rem;
+  margin: 2rem auto;
   list-style-type: none;
   padding-left: 0;
   text-align: center;
   display: flex;
+  justify-content: center;
 }
 
 #links-list li {
@@ -455,6 +463,7 @@ textarea {
 /* Login / Register Forms */
 .login-register {
   width: 30vw;
+  margin: 0 auto;
 }
 
 /* Single Post */
@@ -478,8 +487,10 @@ textarea {
 }
 
 #delete-form {
-  width: auto;
+  width: inherit;
   padding-bottom: 0.2rem;
+  padding-right: 0;
+
 }
 
 #single-blog-description {
