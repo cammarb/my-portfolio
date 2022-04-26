@@ -16,6 +16,11 @@
 {% endblock %}
 
 {% block content %}
+{% if error %}
+<div class="error">
+  <p style="color: tomato; text-align: center;">{{ error }}</p>
+</div>
+{% endif %}
 <form method="post">
   <div class="input-container">
     <label for="title">Title:</label>

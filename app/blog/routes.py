@@ -18,7 +18,7 @@ def blogs():
     return render_template('blog/blogs.html', blogs_pagination=blogs_pagination, page_number=page_number)
 
 
-@blueprint.get('/blogs/<id>')
+@blueprint.get('/blogs/<int:id>')
 def get_blog(id):
     blog = Blog.query.get(id)
     user = User.query.get(blog.user_id)
@@ -30,7 +30,7 @@ def get_blog(id):
     )
 
 
-@blueprint.post('/blogs/<id>')
+@blueprint.post('/blogs/<int:id>')
 def delete_blog(id):
     blog = Blog.query.get(id)
     blog.delete()
@@ -39,17 +39,17 @@ def delete_blog(id):
 # Edit current blog post
 
 
-@blueprint.get('/blogs/<id>/edit')
+@blueprint.get('/blogs/<int:id>/edit')
 def get_edit_blog(id):
     blog = Blog.query.get(id)
     return render_template('blog/edit_blog.html', blog=blog)
 
 
-@blueprint.post('/blogs/<id>/edit')
+@blueprint.post('/blogs/<int:id>/edit')
 def edit_blog(id):
     blog = Blog.query.get(id)
-    save_post(request.form, current_user)
-    return redirect(url_for('blog.get_blog', id=blog))
+    update_post(request.form, blog)
+    return redirect(url_for('blog.get_blog', id=blog.id))
 
 
 @blueprint.get('/blogs/new')
@@ -64,8 +64,9 @@ def get_blogs():
 @login_required
 def new_blog():
     try:
-        save_post(request.form, current_user)
-        return redirect(url_for('blog.blogs'))
+        blog_id = save_post(request.form, current_user)
+        blog_id
+        return redirect(url_for('blog.get_blog', id=blog_id))
 
     except Exception as error_message:
         error = error_message or 'An error occurred while creating a post. Please make sure to enter valid data.'
