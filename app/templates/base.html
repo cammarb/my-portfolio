@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>:~$ {% block title %}{% endblock %}</title>
     <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <link defer rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
     <script defer src="https://kit.fontawesome.com/f6088cc271.js" crossorigin="anonymous"></script>
-    <script defer src="../static/js/scripts.js" crossorigin="anonymous"></script>
+    <script defer src="{{ url_for('static',filename='js/scripts.js') }}" crossorigin="anonymous"></script>
     {% endblock %}
 </head>
 
