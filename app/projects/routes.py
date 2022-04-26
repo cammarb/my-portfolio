@@ -15,6 +15,7 @@ def projects():
 
 
 @blueprint.get('/projects/<id>')
+@login_required
 def get_project(id):
     project = Project.query.get(id)
 
@@ -25,6 +26,7 @@ def get_project(id):
 
 
 @blueprint.post('/projects/<id>')
+@login_required
 def delete_project(id):
     project = Project.query.get(id)
     project.delete()
