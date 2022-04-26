@@ -14,15 +14,22 @@ def projects():
     return render_template('projects/projects.html', projects=all_projects)
 
 
-@blueprint.get('/projects/<id>')
+@blueprint.get('/projects/<id>/edit')
 @login_required
 def get_project(id):
     project = Project.query.get(id)
-
     return render_template(
         'projects/project.html',
         project=project
     )
+
+
+@blueprint.post('/projects/<id>/edit')
+@login_required
+def update_project(id):
+    project = Project.query.get(id)
+    update(request.form, project)
+    return redirect(url_for('projects.projects'))
 
 
 @blueprint.post('/projects/<id>')
