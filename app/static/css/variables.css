@@ -12,9 +12,12 @@
     --green: rgb(54, 175, 104);
     --light-green: rgb(44, 193, 106);
     --red: rgb(255, 89, 89);
+    --transparent-black: rgba(30, 30, 30, 0.2);
+    --transparent-white: rgba(248, 248, 248, 0.2);
     --fonts: "Fira Code", "Monaco", "Consolas", monospace;
     --input-background: var(--white);
     --input-foreground: var(--dark-grey);
     --foreground: var(--black);
     --background: var(--white);
+    --transparent-background: var(--transparent-white);
 }
