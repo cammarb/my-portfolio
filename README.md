@@ -83,4 +83,3 @@ resume.
 - Javascript
 - CSS
 - HTML
-
