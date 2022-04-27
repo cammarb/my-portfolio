@@ -22,8 +22,9 @@
 {% endblock %}
 
 {% block content %}
+{% if not blogs_pagination.items %} <h4 style="margin: 4rem auto;">No posts yet</h4>
+{% else %}
 <div class="blog-grid">
-    {% if blogs_pagination.items %}
 
     {% for blog in blogs_pagination.items %}
     <div class="blog">
@@ -45,10 +46,8 @@
         </div>
     </div>
     {% endfor %}
-    {% else %}
-    <h4 style="margin: 0 auto;">No posts yet</h4>
-    {% endif %}
 </div>
+{% endif %}
 
 {% if blogs_pagination.items %}
 <div id="pagination">
