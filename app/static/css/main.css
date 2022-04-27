@@ -1,9 +1,9 @@
 @import "variables.css";
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: var(--fonts);
 }
 
@@ -16,8 +16,50 @@ nav {
     display: flex;
     width: inherit;
     justify-content: space-between;
+    align-content: center;
+    background-color: var(--white);
+    border: 1px solid red;
+    padding: 1rem 1rem;
+    position: fixed;
+    /* background: var(--transparent-background);
+    backdrop-filter: blur(2rem); */
 }
 
 .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
     min-width: 202px;
+    font-size: 1.1rem;
+}
+
+#hamburger-icon {
+    font-size: 1.5rem;
+}
+
+#primary-navigation {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#primary-navigation li {
+    margin-inline-end: 1rem;
+}
+
+@media(max-width: 35em) {
+    #primary-navigation {
+        gap: 2em;
+        position: fixed;
+        inset: 0;
+
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2em;
+
+        background: var(--transparent-background);
+        backdrop-filter: blur(2rem);
+    }
 }
