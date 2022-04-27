@@ -6,8 +6,7 @@ a button {
     color: var(--white);
     border: none;
     border-radius: 0.25rem;
-    width: 150px;
-    height: 40px;
+    padding: 0.8rem 1.5rem;
     transition: 0.5s;
     cursor: pointer;
 }
