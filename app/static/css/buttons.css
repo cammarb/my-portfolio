@@ -1,0 +1,25 @@
+@import "variables.css";
+
+/* Navigation buttons */
+a button {
+    background-color: var(--light-green);
+    color: var(--white);
+    border: none;
+    border-radius: 0.25rem;
+    width: 150px;
+    height: 40px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/* Buttons inside forms */
+form button {
+    background-color: var(--light-green);
+    color: var(--white);
+    border: none;
+    border-radius: 0.25rem;
+    width: 150px;
+    height: 40px;
+    transition: 0.5s;
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+/* Google Font - Fira Code */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+
+/* Variables */
+:root {
+    --black: rgb(30, 30, 30);
+    --white: rgb(248, 248, 248);
+    --light-green: rgb(44, 193, 106);
+    --grey: rgb(94, 94, 94);
+    --light-grey: rgb(142, 142, 142);
+    --dark-grey: rgb(70, 70, 70);
+    --blue: rgb(66, 116, 255);
+    --red: rgb(255, 89, 89);
+    --foreground: var(--black);
+    --input-background: var(--white);
+    --fonts: "Fira Code", "Monaco", "Consolas", monospace;
+}
