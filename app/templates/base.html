@@ -34,7 +34,11 @@
                 <li><a href="/blogs" id="menu-item">Blog</a></li>
                 <li><a href="/contact" id="menu-item">Contact</a></li>
                 <li>{% if current_user.is_anonymous %}
-                    <button class="login-btn"><a href="/login">Login</a></button>
+                    <a href="/login">
+                        <button class="login-btn">
+                            Login
+                        </button>
+                    </a>
                     {% endif %}
                 </li>
                 <li> {% if current_user.is_authenticated %}
