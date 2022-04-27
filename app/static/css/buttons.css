@@ -12,6 +12,12 @@ a button {
     transition: 0.5s;
 }
 
+/* Anchor tags */
+a {
+    text-decoration: none;
+    color: var(--foreground);
+}
+
 /* Buttons inside forms */
 form button {
     background-color: var(--light-green);
