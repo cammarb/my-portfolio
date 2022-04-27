@@ -4,14 +4,16 @@
 /* Variables */
 :root {
     --black: rgb(30, 30, 30);
-    --white: rgb(248, 248, 248);
-    --light-green: rgb(44, 193, 106);
     --grey: rgb(94, 94, 94);
-    --light-grey: rgb(142, 142, 142);
     --dark-grey: rgb(70, 70, 70);
+    --light-grey: rgb(142, 142, 142);
+    --white: rgb(248, 248, 248);
     --blue: rgb(66, 116, 255);
+    --light-green: rgb(44, 193, 106);
     --red: rgb(255, 89, 89);
-    --foreground: var(--black);
-    --input-background: var(--white);
     --fonts: "Fira Code", "Monaco", "Consolas", monospace;
+    --input-background: var(--white);
+    --input-foreground: var(--dark-grey);
+    --foreground: var(--black);
+    --background: var(--white);
 }
