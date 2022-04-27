@@ -15,7 +15,8 @@
 
     <!-- Javascript files -->
     <script defer src="https://kit.fontawesome.com/f6088cc271.js" crossorigin="anonymous"></script>
-    <script defer src="{{ url_for('static',filename='js/scripts.js') }}" crossorigin="anonymous"></script>
+    <!-- <script defer src="{{ url_for('static',filename='js/scripts.js') }}" crossorigin="anonymous"></script> -->
+    <script defer src="{{ url_for('static',filename='js/hamburgerMenu.js') }}" crossorigin="anonymous"></script>
     {% endblock %}
 </head>
 
@@ -28,50 +29,50 @@
                 :<span id="tilde">~</span>$ Camila Martinez <span id="cursor">_</span>
             </a>
         </div>
-        <div class="menu-container">
-            <a href="javascript:void(0);" id="hambuger-icon" onclick="toggleMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </a>
-            <ul id="primary-navigation" class="">
-                <li>
-                    <button type="button" id="theme-swticher">
-                        <i class="fa-solid fa-moon" id="moon-icon"></i>
-                        <i class="fa-solid fa-sun" id="sun-icon"></i>
+        <!-- <div class="menu-container"> -->
+        <button id="hamburger-icon">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul id="primary-navigation" class="">
+            <li>
+                <button type="button" id="theme-swticher">
+                    <i class="fa-solid fa-moon" id="moon-icon"></i>
+                    <i class="fa-solid fa-sun" id="sun-icon"></i>
+                </button>
+            </li>
+            <li>
+                <a href="/projects" id="menu-item">Projects</a>
+            </li>
+            <li>
+                <a href="/blogs" id="menu-item">Blog</a>
+            </li>
+            <li>
+                <a href="/contact" id="menu-item">Contact</a>
+            </li>
+            {% if current_user.is_anonymous %}
+            <li>
+                <a href="/login">
+                    <button id="login-btn">
+                        Login
                     </button>
-                </li>
-                <li>
-                    <a href="/projects" id="menu-item">Projects</a>
-                </li>
-                <li>
-                    <a href="/blogs" id="menu-item">Blog</a>
-                </li>
-                <li>
-                    <a href="/contact" id="menu-item">Contact</a>
-                </li>
-                {% if current_user.is_anonymous %}
-                <li>
-                    <a href="/login">
-                        <button id="login-btn">
-                            Login
+                </a>
+            </li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li>
+                <small id="login-status">
+                    <a href="{{ url_for('users.logout') }}">
+                        <button class="logout-btn">
+                            Logout
                         </button>
                     </a>
-                </li>
-                {% endif %}
-                {% if current_user.is_authenticated %}
-                <li>
-                    <small id="login-status">
-                        <a href="{{ url_for('users.logout') }}">
-                            <button class="logout-btn">
-                                Logout
-                            </button>
-                        </a>
-                        {{ current_user.name }}
-                    </small>
-                </li>
-                {% endif %}
-            </ul>
+                    {{ current_user.name }}
+                </small>
+            </li>
+            {% endif %}
+        </ul>
 
-        </div>
+        <!-- </div> -->
         <!-- <div id="menu-menu" class="menu-menu-container"></div> -->
     </nav>
     {% endblock %}
