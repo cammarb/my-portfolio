@@ -64,11 +64,11 @@ resume.
 - [x] ➕ Blog
     - [x] Create
     - [x] Delete 
-    - [ ] Edit
+    - [x] Edit
 - [x] 📁 Project
     - [x] Create
     - [x] Delete 
-    - [ ] Edit
+    - [x] Edit
 - [x] 🔒 Login/Authentication
     - [x] Register
     - [x] Login  
@@ -77,7 +77,7 @@ resume.
 - [ ] 🔍 Search and filter blog entries
 - [ ] 🎨 Background animations
 
-## Built in with
+## Built with
 
 - Python (Flask)
 - Javascript
