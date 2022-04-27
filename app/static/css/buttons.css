@@ -7,8 +7,9 @@ a button {
     border: none;
     border-radius: 0.25rem;
     padding: 0.8rem 1.5rem;
-    transition: 0.5s;
     cursor: pointer;
+    font-weight: 600;
+    transition: 0.5s;
 }
 
 /* Buttons inside forms */
