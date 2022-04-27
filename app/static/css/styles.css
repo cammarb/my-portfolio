@@ -59,6 +59,10 @@ form button:hover {
   text-align: center;
 }
 
+#edit-btn form {
+  padding: 0.5rem 0;
+}
+
 
 /* Dark Mode */
 .dark-mode {
