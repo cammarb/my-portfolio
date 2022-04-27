@@ -7,73 +7,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>:~$ {% block title %}{% endblock %}</title>
-    <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
-    <link defer rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+
+    <!-- CSS files -->
+    <!-- <link defer rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/buttons.css') }}">
+
+    <!-- Javascript files -->
     <script defer src="https://kit.fontawesome.com/f6088cc271.js" crossorigin="anonymous"></script>
     <script defer src="{{ url_for('static',filename='js/scripts.js') }}" crossorigin="anonymous"></script>
     {% endblock %}
 </head>
 
 <body>
+    <!-- Navigation menu -->
     {% block nav %}
-    <nav class="menubar">
-        <div class="home-container">
-            <a href="/" class="menuItem" id="home">:<span id="tilde">~</span>$ Camila Martinez <span
-                    id="cursor">_</span></a>
+    <nav>
+        <div class="logo-container">
+            <a href="/" id="logo" class="">
+                :<span id="tilde">~</span>$ Camila Martinez <span id="cursor">_</span>
+            </a>
         </div>
-        <div class="menu-container" id="navbar">
-            <button type="button" id="theme-swticher">
-                <i class="fa-solid fa-moon" id="moon-icon"></i>
-                <i class="fa-solid fa-sun" id="sun-icon"></i>
-            </button>
-            <a href="javascript:void(0);" class="hambuger-icon" onclick="toggleMenu()">
+        <div class="menu-container">
+            <a href="javascript:void(0);" id="hambuger-icon" onclick="toggleMenu()">
                 <i class="fa-solid fa-bars"></i>
             </a>
-            <ul id="menu-items">
-                <li><a href="/projects" id="menu-item">Projects</a></li>
-                <li><a href="/blogs" id="menu-item">Blog</a></li>
-                <li><a href="/contact" id="menu-item">Contact</a></li>
-                <li>{% if current_user.is_anonymous %}
+            <ul id="primary-navigation" class="">
+                <li>
+                    <button type="button" id="theme-swticher">
+                        <i class="fa-solid fa-moon" id="moon-icon"></i>
+                        <i class="fa-solid fa-sun" id="sun-icon"></i>
+                    </button>
+                </li>
+                <li>
+                    <a href="/projects" id="menu-item">Projects</a>
+                </li>
+                <li>
+                    <a href="/blogs" id="menu-item">Blog</a>
+                </li>
+                <li>
+                    <a href="/contact" id="menu-item">Contact</a>
+                </li>
+                {% if current_user.is_anonymous %}
+                <li>
                     <a href="/login">
-                        <button class="login-btn">
+                        <button id="login-btn">
                             Login
                         </button>
                     </a>
-                    {% endif %}
                 </li>
-                <li> {% if current_user.is_authenticated %}
+                {% endif %}
+                {% if current_user.is_authenticated %}
+                <li>
                     <small id="login-status">
                         <a href="{{ url_for('users.logout') }}">
-                            <button class="login-btn">
+                            <button class="logout-btn">
                                 Logout
                             </button>
                         </a>
-
                         {{ current_user.name }}
                     </small>
-                    {% endif %}
                 </li>
+                {% endif %}
             </ul>
 
         </div>
-        <div id="menu-menu" class="menu-menu-container"></div>
+        <!-- <div id="menu-menu" class="menu-menu-container"></div> -->
     </nav>
     {% endblock %}
 
-    <!-- TODO: Fix header
-    {% block header %}
-    <header>
-        {% block header_content%}
-        {% endblock%}
-    </header>
-    {% endblock %} -->
-
-
+    <!-- Content -->
     <div class="container">
-        <header>
+        {% block header_container %}
+        <div class="header">
             {% block header %}
             {% endblock %}
-        </header>
+        </div>
+        {% endblock %}
+
         {% block content %}
         {% endblock %}
     </div>
