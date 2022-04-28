@@ -16,7 +16,7 @@
     <!-- Javascript files -->
     <script src="https://kit.fontawesome.com/f6088cc271.js" crossorigin="anonymous"></script>
     <!-- <script defer src="{{ url_for('static',filename='js/scripts.js') }}" crossorigin="anonymous"></script> -->
-    <script src="{{ url_for('static',filename='js/hamburgerMenu.js') }}" defer></script>
+    <script src="{{ url_for('static',filename='js/menu.js') }}" defer></script>
     {% endblock %}
 </head>
 
@@ -36,9 +36,10 @@
         <div class="primary-menu">
             <ul class="navigation">
                 <li>
-                    <button type=" button" id="theme-swticher">
-                        <i class="fa-solid fa-moon" id="moon-icon"></i>
+                    <button type="button" id="theme-switcher">
+                        <i class="fa-solid fa-circle" id="switch"></i>
                         <i class="fa-solid fa-sun" id="sun-icon"></i>
+                        <i class="fa-solid fa-moon" id="moon-icon"></i>
                     </button>
                 </li>
                 <li>
