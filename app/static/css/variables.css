@@ -3,7 +3,7 @@
 
 /* Variables */
 :root {
-    --black: rgb(30, 30, 30);
+    --black: rgb(32, 32, 32);
     --grey: rgb(94, 94, 94);
     --dark-grey: rgb(70, 70, 70);
     --light-grey: rgb(142, 142, 142);
@@ -17,7 +17,4 @@
     --fonts: "Fira Code", "Monaco", "Consolas", monospace;
     --input-background: var(--white);
     --input-foreground: var(--dark-grey);
-    --foreground: var(--black);
-    --background: var(--white);
-    --transparent-background: var(--transparent-white);
 }
