@@ -51,7 +51,7 @@ nav {
     margin-inline-end: 1rem;
 }
 
-@media(max-width: 35em) {
+@media(max-width: 50em) {
     .primary-navigation {
         gap: 2em;
 
@@ -66,6 +66,7 @@ nav {
         backdrop-filter: blur(2rem);
 
         transform: translateX(100%);
+        transition: transform 350ms ease-out;
     }
 
     .primary-navigation[data-visible="true"] {
