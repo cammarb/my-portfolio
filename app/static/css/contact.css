@@ -1,0 +1,21 @@
+/* Contact page */
+.contact-container {
+    text-align: center;
+}
+
+#links-list {
+    margin: 2rem auto;
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#links-list li {
+    padding: 0.3rem 0.8rem;
+}
+
+#links-list li a {
+    text-decoration: none !important;
+}
