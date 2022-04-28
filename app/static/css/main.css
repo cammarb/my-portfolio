@@ -90,6 +90,34 @@ nav {
     inset: 0;
 }
 
+/* Dark Mode switch button */
+#theme-switcher {
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 0.1rem;
+    display: flex;
+    align-items: center;
+}
+
+#theme-switcher #moon-icon,
+#theme-switcher #sun-icon {
+    font-size: 1.2rem;
+    margin: 0.2rem;
+}
+
+#switch {
+    color: black;
+    position: absolute;
+    font-size: 1.5rem;
+    background: none !important;
+    transform: translateX(0%);
+    transition: transform 150ms ease-in-out;
+}
+
+#switch.dark-mode-active {
+    transform: translateX(100%);
+}
+
 @media(max-width: 1024px) {
     .primary-menu {
         display: none;
@@ -109,7 +137,7 @@ nav {
         /* position: absolute; */
         z-index: 9999;
         width: 2rem;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         border: 0;
         aspect-ratio: 1;
         top: 1rem;
