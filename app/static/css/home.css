@@ -9,6 +9,68 @@
     flex-direction: row;
 }
 
+.column {
+    max-width: 25%;
+    min-width: fit-content;
+}
+
+#left-col {
+    min-width: fit-content;
+}
+
 #laptop-img {
-    width: 100%;
+    max-width: 325px;
+}
+
+#languages-container {
+    padding: 0.8rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#languages-container h5 {
+    width: fit-content;
+    margin-right: 0.3rem;
+    margin-bottom: 0.2rem;
+}
+
+.programming-language {
+    color: var(--white) !important;
+    padding: 0.3rem;
+}
+
+.programming-language i {
+    color: var(--white) !important;
+    background: none !important;
+}
+
+#py {
+    background-color: rgb(26, 102, 218);
+}
+
+#cs {
+    background-color: rgb(149, 54, 228);
+}
+
+#js {
+    background-color: rgb(255, 204, 38);
+}
+
+#java {
+    background-color: rgb(236, 70, 70);
+}
+
+.btn-projects-container {
+    justify-content: center;
+    display: flex;
+}
+
+.github-link {
+    text-align: center;
+}
+
+@media(max-width: 50em) {
+    .home-header {
+        flex-direction: column;
+    }
 }

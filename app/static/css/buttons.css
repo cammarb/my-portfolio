@@ -12,6 +12,10 @@ a button {
     transition: 0.5s;
 }
 
+a button:hover {
+    background-color: var(--green);
+}
+
 /* Anchor tags */
 a {
     text-decoration: none;
