@@ -1,0 +1,14 @@
+@import "variables.css";
+
+.home-header {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#laptop-img {
+    width: 100%;
+}
