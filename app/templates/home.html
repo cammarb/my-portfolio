@@ -2,6 +2,7 @@
 {% block title %}Home 🏠{% endblock %}
 {% block head %}
 {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/home.css') }}">
 {% endblock %}
 
 {% block nav %}
@@ -9,8 +10,8 @@
 {% endblock %}
 
 {% block content %}
-<div class="header">
-	<div class="title">
+<div class="home-header">
+	<div class="column" id="left-col">
 		<h1>
 			Hi👋
 			<br>
@@ -19,7 +20,7 @@
 		<br>
 		<h3>Software Engineering student</h3>
 		<h4>Lima, PE -> 📍 Berlin, DE</h4>
-		<div id="languages">
+		<div id="languages-container">
 			<h5 class="programming-icon" id="py">
 				<i class="fa-brands fa-python"></i>
 				Python
@@ -44,16 +45,16 @@
 			</a>
 		</div>
 	</div>
-	<div class="img-container">
-		<img src="../static/img/laptop.png" alt="laptop" title="laptop icon">
+	<div class="column" id="right-col">
+		<img src="../static/img/laptop.png" alt="laptop" title="laptop icon" id="laptop-img">
 	</div>
-	<p id="github-link">
+</div>
+<div class="github-link">
+	<a href="https://github.com/cammarb">
 		Check out my
-		<a href="https://github.com/cammarb">
-			<i class="fa-brands fa-github"></i>
-			GitHub
-		</a>
+		<i class="fa-brands fa-github"></i>
+		GitHub
 		page!
-	</p>
+	</a>
 </div>
 {% endblock %}
