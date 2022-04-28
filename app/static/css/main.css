@@ -49,6 +49,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 350ms ease-out;
 }
 
 .primary-navigation li {
@@ -78,7 +79,7 @@ nav {
     }
 
     .primary-navigation[data-visible="true"] {
-        transition: transform 350ms ease-out;
+        /* transition: transform 350ms ease-out; */
         transform: translateX(0%);
     }
 
