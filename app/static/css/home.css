@@ -69,6 +69,15 @@
     text-align: center;
 }
 
+#github-anchor #github {
+    transition: 400ms ease-in-out;
+}
+
+.github-link #github:hover {
+    font-size: larger;
+}
+
+
 @media(max-width: 50em) {
     .home-header {
         flex-direction: column;
