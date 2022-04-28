@@ -2,8 +2,7 @@ const navigation = document.querySelector(".navigation");
 const primaryMenu = document.querySelector(".primary-menu");
 const mobileMenu = document.querySelector(".mobile-menu");
 const hamburgerBtn = document.querySelector("#hamburger-button");
-const themeSwitcher = document.querySelector("#theme-switcher");
-const switchBtn = document.querySelector("#switch");
+
 
 // Hamburger menu
 hamburgerBtn.addEventListener('click', () => {
@@ -24,8 +23,3 @@ window.onresize = window.onload = function () {
         parent.appendChild(child);
     }
 }
-
-// Theme Switcher
-themeSwitcher.addEventListener('click', () => {
-    switchBtn.classList.toggle("dark-mode-active");
-});
