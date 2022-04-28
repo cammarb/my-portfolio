@@ -1,5 +1,6 @@
 @import "variables.css";
 
+/* Globals */
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +19,7 @@ body {
     padding: 18vh 1rem;
 }
 
+/* Navigation menu */
 nav {
     display: flex;
     width: inherit;
@@ -50,7 +52,11 @@ nav {
     display: none;
 }
 
-.primary-navigation {
+.primary-menu {
+    display: flex;
+}
+
+.primary-menu ul.navigation {
     list-style-type: none;
     display: flex;
     align-items: center;
@@ -58,7 +64,7 @@ nav {
     transition: transform 350ms ease-out;
 }
 
-.primary-navigation li {
+.navigation li {
     margin-inline-start: 1rem;
 }
 
@@ -67,30 +73,33 @@ nav {
     transition: 100ms ease-in;
 }
 
-@media(max-width: 50em) {
-    .primary-navigation li {
+.mobile-menu {
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+
+    gap: 2em;
+
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2em;
+
+    /* background: var(--transparent-background);
+        backdrop-filter: blur(2rem); */
+
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+}
+
+@media(max-width: 1024px) {
+    .primary-menu {
+        display: none;
+    }
+
+    .navigation li {
         margin-inline-start: 0rem;
     }
 
-    .primary-navigation {
-        transform: translateX(100%);
-        /* transition: transform 350ms ease-out; */
-
-        gap: 2em;
-
-        flex-direction: column;
-        padding: min(30vh, 10rem) 2em;
-
-        /* background: var(--transparent-background);
-        backdrop-filter: blur(2rem); */
-
-        position: fixed;
-        z-index: 1000;
-        inset: 0;
-    }
-
-    .primary-navigation[data-visible="true"] {
-        /* transition: transform 350ms ease-out; */
+    .mobile-menu.open {
         transform: translateX(0%);
     }
 
@@ -109,8 +118,20 @@ nav {
     }
 }
 
-@media(min-width: 52em) {
+@media(min-width: 1024px) {
     nav {
-        padding: 0 10%;
+        padding: 0 4rem;
+    }
+}
+
+@media(min-width: 1440px) {
+    nav {
+        padding: 0 8rem;
+    }
+}
+
+@media(min-width: 2460px) {
+    nav {
+        padding: 0 16rem;
     }
 }

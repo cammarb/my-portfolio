@@ -1,15 +1,24 @@
-const primaryNav = document.querySelector(".primary-navigation");
+const navigation = document.querySelector(".navigation");
+const primaryMenu = document.querySelector(".primary-menu");
+const mobileMenu = document.querySelector(".mobile-menu");
 const hamburgerBtn = document.querySelector("#hamburger-button");
 
-hamburgerBtn.addEventListener('click', () => {
-    const visibility = primaryNav.getAttribute("data-visible");
 
-    if (visibility === "false") {
-        primaryNav.setAttribute("data-visible", true);
-        hamburgerBtn.setAttribute("aria-expanded", true);
-    }
-    else if (visibility === "true") {
-        primaryNav.setAttribute("data-visible", false);
-        hamburgerBtn.setAttribute("aria-expanded", false);
-    }
+hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle("open");
 });
+
+window.onresize = window.onload = function () {
+    width = this.innerWidth;
+    const child = navigation;
+
+    // Check that the screen is at least 1024x768
+    if (width <= 1024) {
+        const parent = mobileMenu;
+        parent.appendChild(child);
+    }
+    else {
+        const parent = primaryMenu;
+        parent.appendChild(child);
+    }
+}

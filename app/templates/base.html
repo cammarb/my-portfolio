@@ -29,52 +29,53 @@
                 :<span id="tilde">~</span>$ Camila Martinez <span id="cursor">_</span>
             </a>
         </div>
-        <!-- <div class="menu-container"> -->
-        <button id="hamburger-button" aria-controls="primary-navigation" aria-expanded="false">
+        <button id="hamburger-button">
             <span class="sr-only">Menu</span>
             <i class="fa-solid fa-bars"></i>
         </button>
-        <ul id="primary-navigation" class="primary-navigation" data-visible="false">
-            <li>
-                <button type="button" id="theme-swticher">
-                    <i class="fa-solid fa-moon" id="moon-icon"></i>
-                    <i class="fa-solid fa-sun" id="sun-icon"></i>
-                </button>
-            </li>
-            <li>
-                <a href="/projects" id="menu-item">Projects</a>
-            </li>
-            <li>
-                <a href="/blogs" id="menu-item">Blog</a>
-            </li>
-            <li>
-                <a href="/contact" id="menu-item">Contact</a>
-            </li>
-            {% if current_user.is_anonymous %}
-            <li>
-                <a href="/login">
-                    <button id="login-btn">
-                        Login
+        <div class="primary-menu">
+            <ul class="navigation">
+                <li>
+                    <button type=" button" id="theme-swticher">
+                        <i class="fa-solid fa-moon" id="moon-icon"></i>
+                        <i class="fa-solid fa-sun" id="sun-icon"></i>
                     </button>
-                </a>
-            </li>
-            {% endif %}
-            {% if current_user.is_authenticated %}
-            <li>
-                <small id="login-status">
-                    <a href="{{ url_for('users.logout') }}">
-                        <button class="logout-btn">
-                            Logout
+                </li>
+                <li>
+                    <a href="/projects" id="menu-item">Projects</a>
+                </li>
+                <li>
+                    <a href="/blogs" id="menu-item">Blog</a>
+                </li>
+                <li>
+                    <a href="/contact" id="menu-item">Contact</a>
+                </li>
+                {% if current_user.is_anonymous %}
+                <li>
+                    <a href="/login">
+                        <button id="login-btn">
+                            Login
                         </button>
                     </a>
-                    {{ current_user.name }}
-                </small>
-            </li>
-            {% endif %}
-        </ul>
-
-        <!-- </div> -->
-        <!-- <div id="menu-menu" class="menu-menu-container"></div> -->
+                </li>
+                {% endif %}
+                {% if current_user.is_authenticated %}
+                <li>
+                    <small id="login-status">
+                        <a href="{{ url_for('users.logout') }}">
+                            <button class="logout-btn">
+                                Logout
+                            </button>
+                        </a>
+                        {{ current_user.name }}
+                    </small>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="mobile-menu">
+            <!-- This is where navigation will go depending on screen size -->
+        </div>
     </nav>
     {% endblock %}
 
