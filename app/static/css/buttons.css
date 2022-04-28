@@ -2,8 +2,8 @@
 
 /* Navigation buttons */
 a button {
-    background-color: var(--light-green);
-    color: var(--white);
+    background-color: var(--light-green) !important;
+    color: var(--white) !important;
     border: none;
     border-radius: 0.25rem;
     padding: 0.8rem 1.5rem;
@@ -13,19 +13,18 @@ a button {
 }
 
 a button:hover {
-    background-color: var(--green);
+    background-color: var(--green) !important;
 }
 
 /* Anchor tags */
 a {
     text-decoration: none;
-    color: var(--foreground);
 }
 
 /* Buttons inside forms */
 form button {
-    background-color: var(--light-green);
-    color: var(--white);
+    background-color: var(--light-green) !important;
+    color: var(--white) !important;
     border: none;
     border-radius: 0.25rem;
     width: 150px;
