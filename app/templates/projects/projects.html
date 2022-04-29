@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block head %}
 {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/projects.css') }}">
 {% endblock %}
 
 {% block nav %}
@@ -8,16 +9,18 @@
 {% endblock %}
 
 {% block header %}
-<h1>
-    {% block title %}
-    Projects 📁
-    {% endblock %}
-</h1>
-{% if current_user.is_authenticated %}
-<a href="projects/new">
-    <button>Add a project</button>
-</a>
-{% endif %}
+<div class="header">
+    <h1>
+        {% block title %}
+        Projects 📁
+        {% endblock %}
+    </h1>
+    {% if current_user.is_authenticated %}
+    <a href="projects/new">
+        <button>Add a project</button>
+    </a>
+    {% endif %}
+</div>
 {% endblock %}
 
 
@@ -41,8 +44,8 @@
         </a>
         {% endif %}
     </div>
-    <div class="project-img">
-        <img src="{{project.image_link}}" alt="project screenshot" title="project screenshot">
+    <div class="project-img-container">
+        <img src="{{project.image_link}}" alt="project screenshot" title="project screenshot" id="project-img">
     </div>
 </div>
 {% endfor %}
