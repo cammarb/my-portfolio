@@ -16,6 +16,7 @@ a button:hover {
     background-color: var(--green) !important;
 }
 
+
 /* Anchor tags */
 a {
     text-decoration: none;
@@ -27,8 +28,21 @@ form button {
     color: var(--white) !important;
     border: none;
     border-radius: 0.25rem;
-    width: 150px;
-    height: 40px;
-    transition: 0.5s;
+    padding: 0.8rem 1.5rem;
     cursor: pointer;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+form button:hover {
+    background-color: var(--green) !important;
+}
+
+/* Delete Button */
+#delete-btn {
+    background-color: var(--light-red) !important;
+}
+
+#delete-btn:hover {
+    background-color: var(--red) !important;
 }
