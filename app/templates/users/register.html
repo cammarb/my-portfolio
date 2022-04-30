@@ -1,43 +1,49 @@
 {% extends 'base.html' %}
 {% block head %}
 {{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/login-forms.css')}}">
 {% endblock %}
 
 {% block header %}
-<h2>
-    {% block title %}Register{% endblock %}
-</h2>
+<div class="header">
+    <h2>
+        {% block title %}Register{% endblock %}
+    </h2>
+    <div>
+        {% if error %}
+        <p style="color: tomato;">{{ error }}</p>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
-
 {% block content %}
-{% if error %}
-<p style="color: tomato;">{{ error }}</p>
-{% endif %}
-<form method="post" class="login-register">
-    <div class="input-container">
-        <label for="name">Full name:</label>
-        <br>
-        <input type="text" name="name" id="name" required>
-    </div>
-    <div class="input-container">
-        <label for="email">Email:</label>
-        <br>
-        <input type="email" name="email" id="email" required>
-    </div>
+<div class="login-register">
+    <form method="post">
+        <div class="input-container">
+            <label for="name">Full name:</label>
+            <br>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div class="input-container">
+            <label for="email">Email:</label>
+            <br>
+            <input type="email" name="email" id="email" required>
+        </div>
 
-    <div class="input-container">
-        <label for="password">Password:</label>
-        <br>
-        <input type="password" name="password" id="password" required>
-    </div>
+        <div class="input-container">
+            <label for="password">Password:</label>
+            <br>
+            <input type="password" name="password" id="password" required>
+        </div>
 
-    <div class="input-container">
-        <label for="password_confirmation">Password Confirmation:</label>
-        <br>
-        <input type="password" name="password_confirmation" id="password_confirmation" required>
-    </div>
-    <div class="btn-container">
-        <button type="submit" class="input-btn">Register</button>
-    </div>
-</form>
+        <div class="input-container">
+            <label for="password_confirmation">Password Confirmation:</label>
+            <br>
+            <input type="password" name="password_confirmation" id="password_confirmation" required>
+        </div>
+        <div class="btn-container">
+            <button type="submit" class="input-btn">Register</button>
+        </div>
+    </form>
+</div>
 {% endblock %}

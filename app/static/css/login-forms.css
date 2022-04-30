@@ -1,0 +1,35 @@
+@import 'variables.css';
+
+.header {
+    justify-content: center;
+}
+
+.login-register {
+    width: 50%;
+    display: flex;
+    margin: auto;
+}
+
+.login-register form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.login-register form .input-container {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.login-register form .input-container input {
+    width: 100%;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 0.3rem 0;
+}
+
+@media(max-width: 50em) {
+    .login-register {
+        width: 100%;
+    }
+}
