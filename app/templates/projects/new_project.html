@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block head %}
 {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/projects.css') }}">
 {% endblock %}
 
 {% block nav %}
@@ -8,46 +9,51 @@
 {% endblock %}
 
 {% block header %}
-<h2>
-  {% block title %}
-  Add Project
-  {% endblock %}
-</h2>
+<div class="header">
+  <h2>
+    {% block title %}
+    Add Project
+    {% endblock %}
+  </h2>
+</div>
 {% endblock %}
 
 
 {% block content %}
-<form method="post">
-  <div class="input-container">
-    <label for="title">Title:</label>
-    <br>
+<div class="project">
 
-    <input type="text" name="title" id="title" placeholder="My awesome app" value="{{ request.form['title'] }}">
-  </div>
-  <div class="input-container">
-    <label for="description">Description:</label>
-    <br>
+  <form method="post">
+    <div class="input-container">
+      <label for="title">Title:</label>
+      <br>
 
-    <textarea name="description" id="description"
-      placeholder="Insert description here...">{{ request.form['description'] }}</textarea>
-  </div>
-  <div class="input-container">
-    <label for="image_link">Image URL:</label>
-    <br>
+      <input type="text" name="title" id="title" placeholder="My awesome app" value="{{ request.form['title'] }}">
+    </div>
+    <div class="input-container">
+      <label for="description">Description:</label>
+      <br>
 
-    <input type="text" name="image_link" id="image_link" placeholder="https://www.image.com/image.jpg"
-      value="{{ request.form['image_link'] }}">
-  </div>
-  <div class="input-container">
-    <label for="gh_link">Github URL:</label>
-    <br>
+      <textarea name="description" id="description"
+        placeholder="Insert description here...">{{ request.form['description'] }}</textarea>
+    </div>
+    <div class="input-container">
+      <label for="image_link">Image URL:</label>
+      <br>
 
-    <input type="text" name="gh_link" id="gh_link" placeholder="https://www.github.com/awesome.git"
-      value="{{ request.form['gh_link'] }}">
-  </div>
-  <div class="btn-container">
-    <button type="submit" class="input-btn">Add </button>
-  </div>
-</form>
+      <input type="text" name="image_link" id="image_link" placeholder="https://www.image.com/image.jpg"
+        value="{{ request.form['image_link'] }}">
+    </div>
+    <div class="input-container">
+      <label for="gh_link">Github URL:</label>
+      <br>
+
+      <input type="text" name="gh_link" id="gh_link" placeholder="https://www.github.com/awesome.git"
+        value="{{ request.form['gh_link'] }}">
+    </div>
+    <div class="btn-container">
+      <button type="submit" class="input-btn">Add </button>
+    </div>
+  </form>
+</div>
 
 {% endblock %}

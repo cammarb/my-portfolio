@@ -2,6 +2,7 @@
 {% block title %} {{ project.title }} {% endblock %}
 {% block head %}
 {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/projects.css') }}">
 {% endblock %}
 
 {% block nav %}
@@ -9,50 +10,52 @@
 {% endblock %}
 
 {% block header %}
-<div>
+<div class="header">
     <h1>
         Project #{{project.id}}
     </h1>
-</div>
-<div id="edit-btn">
-    <form method="post" id="delete-form" action="{{ url_for('projects.delete_project', id=project.id) }}">
-        <button type="submit" id="delete-btn">Delete</button>
-    </form>
+    <div>
+        <form method="post" id="delete-form" action="{{ url_for('projects.delete_project', id=project.id) }}">
+            <button type="submit" id="delete-btn">Delete</button>
+        </form>
+    </div>
 </div>
 {% endblock %}
 
 {% block content %}
-<form method="post">
-    <div class="input-container">
-        <label for="title">Title:</label>
-        <br>
+<div class="project">
+    <form method="post">
+        <div class="input-container">
+            <label for="title">Title:</label>
+            <br>
 
-        <input type="text" name="title" id="title" placeholder="My awesome app"
-            value="{{ request.form['title'] or project.title }}">
-    </div>
-    <div class="input-container">
-        <label for="description">Description:</label>
-        <br>
+            <input type="text" name="title" id="title" placeholder="My awesome app"
+                value="{{ request.form['title'] or project.title }}">
+        </div>
+        <div class="input-container">
+            <label for="description">Description:</label>
+            <br>
 
-        <textarea name="description" id="description"
-            placeholder="Insert description here...">{{ request.form['description'] or project.description }}</textarea>
-    </div>
-    <div class="input-container">
-        <label for="image_link">Image URL:</label>
-        <br>
+            <textarea name="description" id="description"
+                placeholder="Insert description here...">{{ request.form['description'] or project.description }}</textarea>
+        </div>
+        <div class="input-container">
+            <label for="image_link">Image URL:</label>
+            <br>
 
-        <input type="text" name="image_link" id="image_link" placeholder="https://www.image.com/image.jpg"
-            value="{{ request.form['image_link'] or project.image_link }}">
-    </div>
-    <div class="input-container">
-        <label for="gh_link">Github URL:</label>
-        <br>
+            <input type="text" name="image_link" id="image_link" placeholder="https://www.image.com/image.jpg"
+                value="{{ request.form['image_link'] or project.image_link }}">
+        </div>
+        <div class="input-container">
+            <label for="gh_link">Github URL:</label>
+            <br>
 
-        <input type="text" name="gh_link" id="gh_link" placeholder="https://www.github.com/awesome.git"
-            value="{{ request.form['gh_link'] or project.gh_link }}">
-    </div>
-    <div class="btn-container">
-        <button type="submit" class="input-btn">Save</button>
-    </div>
-</form>
+            <input type="text" name="gh_link" id="gh_link" placeholder="https://www.github.com/awesome.git"
+                value="{{ request.form['gh_link'] or project.gh_link }}">
+        </div>
+        <div class="btn-container">
+            <button type="submit" class="input-btn">Save</button>
+        </div>
+    </form>
+</div>
 {% endblock %}
