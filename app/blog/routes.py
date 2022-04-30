@@ -5,7 +5,7 @@ from .services import *
 from app.users.models import User
 from flask_login import login_required, current_user
 
-blueprint = Blueprint('blog', __name__)
+blueprint = Blueprint('blogs', __name__)
 
 # Routes
 
@@ -34,7 +34,7 @@ def get_blog(id):
 def delete_blog(id):
     blog = Blog.query.get(id)
     blog.delete()
-    return redirect(url_for('blog.blogs'))
+    return redirect(url_for('blogs.blogs'))
 
 # Edit current blog post
 
@@ -49,7 +49,7 @@ def get_edit_blog(id):
 def edit_blog(id):
     blog = Blog.query.get(id)
     update_post(request.form, blog)
-    return redirect(url_for('blog.get_blog', id=blog.id))
+    return redirect(url_for('blogs.get_blog', id=blog.id))
 
 
 @blueprint.get('/blogs/new')
@@ -66,7 +66,7 @@ def new_blog():
     try:
         blog_id = save_post(request.form, current_user)
         blog_id
-        return redirect(url_for('blog.get_blog', id=blog_id))
+        return redirect(url_for('blogs.get_blog', id=blog_id))
 
     except Exception as error_message:
         error = error_message or 'An error occurred while creating a post. Please make sure to enter valid data.'
