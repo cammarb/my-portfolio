@@ -11,7 +11,8 @@
     --blue: rgb(66, 116, 255);
     --green: rgb(51, 154, 94);
     --light-green: rgb(44, 193, 106);
-    --red: rgb(255, 89, 89);
+    --light-red: rgb(255, 89, 89);
+    --red: rgb(216, 81, 81);
     --transparent-black: rgba(30, 30, 30, 0.2);
     --transparent-white: rgba(248, 248, 248, 0.2);
     --fonts: "Fira Code", "Monaco", "Consolas", monospace;
