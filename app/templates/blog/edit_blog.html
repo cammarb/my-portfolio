@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block head %}
 {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/blog.css') }}">
+
 {% endblock %}
 
 {% block nav %}
@@ -8,11 +10,18 @@
 {% endblock %}
 
 {% block header %}
-<h2>
-  {% block title %}
-  Edit Post
-  {% endblock %}
-</h2>
+<div class="header">
+  <h2>
+    {% block title %}
+    Edit Post
+    {% endblock %}
+  </h2>
+  <div>
+    <form method="post" id="delete-form" action="{{ url_for('blogs.delete_blog', id=blog.id) }}">
+      <button type="submit" id="delete-btn">Delete</button>
+    </form>
+  </div>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -21,26 +30,28 @@
   <p style="color: tomato; text-align: center;">{{ error }}</p>
 </div>
 {% endif %}
-<form method="post">
-  <div class="input-container">
-    <label for="title">Title:</label>
-    <br>
-    <input type="text" name="title" id="title" value="{{ request.form['title'] or blog.title }}">
-  </div>
-  <div class="input-container">
-    <label for="content">Content:</label>
-    <br>
-    <textarea name="content" id="content">{{ request.form['content'] or blog.content }}</textarea>
-  </div>
-  <div class="input-container">
-    <label for="picture_url">Header image URL:</label>
-    <br>
-    <input type="text" name="picture_url" id="picture_url"
-      value="{{ request.form['picture_url'] or blog.picture_url }}">
-  </div>
-  <div class="btn-container">
-    <button type="submit" class="input-btn">Save</button>
-  </div>
-</form>
+<div class="blog-form-container">
+  <form method="post">
+    <div class="input-container">
+      <label for="title">Title:</label>
+      <br>
+      <input type="text" name="title" id="title" value="{{ request.form['title'] or blog.title }}">
+    </div>
+    <div class="input-container">
+      <label for="content">Content:</label>
+      <br>
+      <textarea name="content" id="content">{{ request.form['content'] or blog.content }}</textarea>
+    </div>
+    <div class="input-container">
+      <label for="picture_url">Header image URL:</label>
+      <br>
+      <input type="text" name="picture_url" id="picture_url"
+        value="{{ request.form['picture_url'] or blog.picture_url }}">
+    </div>
+    <div class="btn-container">
+      <button type="submit" class="input-btn">Save</button>
+    </div>
+  </form>
+</div>
 
 {% endblock %}

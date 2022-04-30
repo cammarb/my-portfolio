@@ -2,6 +2,7 @@
 
 {% block head %}
 {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/blog.css') }}">
 {% endblock %}
 
 {% block nav %}
@@ -9,18 +10,17 @@
 {% endblock %}
 
 {% block header %}
-<div>
+<div class="header">
     <h1>
         {% block title %} {{ blog.title }} {% endblock %}
     </h1>
-    <h5>{{user.name}}</h5>
-    <h6>{{blog.date}}</h6>
+    <div>
+        <h5>{{user.name}}</h5>
+        <h6>{{blog.date}}</h6>
+    </div>
 </div>
 {% if current_user.is_authenticated %}
-<div id="edit-btn">
-    <form method="post" id="delete-form">
-        <button type="submit" id="delete-btn">Delete</button>
-    </form>
+<div class="edit-btn-container">
     <a href="/blogs/{{blog.id}}/edit">
         <button>Edit</button>
     </a>

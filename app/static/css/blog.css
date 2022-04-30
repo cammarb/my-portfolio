@@ -1,0 +1,110 @@
+@import 'variables.css';
+
+/* List of blog posts */
+#no-posts {
+    text-align: center;
+    padding: 3rem;
+}
+
+.blog {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.blog>* {
+    padding: 1.5rem 1rem;
+    width: 45%;
+}
+
+.blog-img-container {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+#blog-img {
+    max-height: 30vh;
+    width: auto;
+}
+
+.blog-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-body * {
+    margin-top: 1rem;
+}
+
+.blog-body #blog-link {
+    margin: 0.5rem auto;
+}
+
+#pagination {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Single Blog post */
+.edit-btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem 0;
+}
+
+.blog-post {
+    width: 90%;
+}
+
+.post-img-container {
+    width: 100%;
+}
+
+#post-header-img {
+    width: 100%;
+}
+
+/* New Blog & Edit Blog */
+.blog-form-container {
+    width: 100%;
+    display: flex;
+}
+
+.blog-form-container form {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.blog-form-container form .input-container {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.blog-form-container form .input-container input,
+.blog-form-container form .input-container textarea {
+    width: 100%;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 0.3rem 0;
+}
+
+@media(max-width: 50em) {
+    .blog {
+        flex-direction: column;
+    }
+
+    .blog-body,
+    .blog-img-container {
+        width: 100%;
+    }
+
+    .blog-form-container {
+        width: 100%;
+    }
+}

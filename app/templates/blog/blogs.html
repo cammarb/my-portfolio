@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block head %}
 {{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/blog.css') }}">
 {% endblock %}
 
 {% block nav %}
@@ -9,44 +10,42 @@
 
 
 {% block header %}
-<h1>
-    {% block title %}
-    Blog posts 📝
-    {% endblock %}
-</h1>
-{% if current_user.is_authenticated %}
-<a href="blogs/new" id="page-link">
-    <button>Create a post</button>
-</a>
-{% endif %}
+<div class="header">
+    <h1>
+        {% block title %}
+        Blog 📝
+        {% endblock %}
+    </h1>
+    {% if current_user.is_authenticated %}
+    <a href="blogs/new" id="page-link">
+        <button>Create a post</button>
+    </a>
+    {% endif %}
+</div>
 {% endblock %}
 
 {% block content %}
-{% if not blogs_pagination.items %} <h4 style="margin: 4rem auto;">No posts yet</h4>
+{% if not blogs_pagination.items %}
+<h4 id="no-posts">No posts yet</h4>
 {% else %}
-<div class="blog-grid">
-
-    {% for blog in blogs_pagination.items %}
-    <div class="blog">
-        <div class="blog-img">
-            <img src="{{blog.picture_url}}">
-        </div>
-        <div class="blog-body">
-            <h2 id="blog-title">
-                {{ blog.title }}
-            </h2>
-            <p id="blog-description">
-                {{ blog.content[0:100] }} ...
-            </p>
-            <div class="btn-container">
-                <a href="blogs/{{blog.id}}" id="page-link">
-                    <button type="button">Read more</button>
-                </a>
-            </div>
-        </div>
+{% for blog in blogs_pagination.items %}
+<div class="blog">
+    <div class="blog-body">
+        <h2 id="blog-title">
+            {{ blog.title }}
+        </h2>
+        <p id="blog-description">
+            {{ blog.content[0:100] }} ...
+        </p>
+        <a href="blogs/{{blog.id}}" id="blog-link">
+            <button type="button">Read more</button>
+        </a>
     </div>
-    {% endfor %}
+    <div class="blog-img-container">
+        <img id="blog-img" src="{{blog.picture_url}}">
+    </div>
 </div>
+{% endfor %}
 {% endif %}
 
 {% if blogs_pagination.items %}
