@@ -10,16 +10,20 @@
 }
 
 .column {
-    max-width: 25%;
-    min-width: fit-content;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 
-#left-col {
-    min-width: fit-content;
+.left-col {
+    max-height: fit-content;
 }
 
 #laptop-img {
-    max-width: 325px;
+    width: 100%;
+    max-width: 50rem;
 }
 
 #languages-container {
@@ -81,5 +85,10 @@
 @media(max-width: 50em) {
     .home-header {
         flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+        align-items: center;
     }
 }
