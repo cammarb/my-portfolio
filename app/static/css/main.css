@@ -31,7 +31,7 @@ body {
 
 .container {
     width: 70%;
-    padding: 15vh 1rem;
+    padding: 10vh 1rem;
     margin: 0 auto;
 }
 
@@ -39,12 +39,11 @@ body {
 nav {
     display: flex;
     width: 100%;
-    max-width: 1100px;
     justify-content: space-between;
     align-content: center;
-    padding: 1rem 1rem;
+    padding: 3vh 3vw;
     position: fixed;
-    min-height: 75px;
+    /* min-height: 75px; */
 }
 
 .logo-container {
@@ -53,7 +52,7 @@ nav {
 }
 
 #logo {
-    min-width: 202px;
+    min-width: fit-content;
     font-size: 1.1rem;
 }
 
@@ -119,10 +118,14 @@ ul.navigation {
     flex-wrap: wrap;
     padding: 1rem 1rem;
     width: 100%;
-    max-width: 1100px;
     margin: 0 auto;
     align-content: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header * {
+    margin-bottom: 0.3rem;
 }
 
 /* Dark Mode switch button */
@@ -158,10 +161,6 @@ ul.navigation {
         width: 80%;
     }
 
-    .primary-menu {
-        display: none;
-    }
-
     .navigation li {
         margin-inline-start: 0rem;
     }
@@ -186,6 +185,10 @@ ul.navigation {
         top: 1rem;
         right: 1rem;
         background: none;
+    }
+
+    .primary-menu {
+        display: none;
     }
 }
 
