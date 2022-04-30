@@ -2,7 +2,7 @@
 
 💻 Website containing all full-stack development projects, as well as blog posts.
 
-![screenshot](https://raw.githubusercontent.com/cammarb/my-portfolio/master/portfolio_screenshot.png)
+![screenshot](https://raw.githubusercontent.com/cammarb/my-portfolio/master/portfolio-screenshot.jpg)
 
 ## Run project
 ### 1. Clone the project and open the folder
