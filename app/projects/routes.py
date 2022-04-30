@@ -24,7 +24,7 @@ def get_project(id):
     )
 
 
-@blueprint.post('/projects/<id>/edit')
+@blueprint.post('/projects/<int:id>/edit')
 @login_required
 def update_project(id):
     project = Project.query.get(id)
@@ -32,7 +32,7 @@ def update_project(id):
     return redirect(url_for('projects.projects'))
 
 
-@blueprint.post('/projects/<id>')
+@blueprint.post('/projects/<int:id>')
 @login_required
 def delete_project(id):
     project = Project.query.get(id)
