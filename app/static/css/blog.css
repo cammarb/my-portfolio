@@ -28,7 +28,7 @@
 
 #blog-img {
     max-height: 30vh;
-    width: auto;
+    max-width: 30vh;
 }
 
 .blog-body {
@@ -59,10 +59,12 @@
 
 .blog-post {
     width: 90%;
+    margin: 0 auto;
 }
 
 .post-img-container {
     width: 100%;
+    padding: 1rem;
 }
 
 #post-header-img {
