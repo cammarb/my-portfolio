@@ -31,6 +31,7 @@ def get_blog(id):
 
 
 @blueprint.post('/blogs/<int:id>')
+@login_required
 def delete_blog(id):
     blog = Blog.query.get(id)
     blog.delete()
@@ -40,12 +41,14 @@ def delete_blog(id):
 
 
 @blueprint.get('/blogs/<int:id>/edit')
+@login_required
 def get_edit_blog(id):
     blog = Blog.query.get(id)
     return render_template('blog/edit_blog.html', blog=blog)
 
 
 @blueprint.post('/blogs/<int:id>/edit')
+@login_required
 def edit_blog(id):
     blog = Blog.query.get(id)
     update_post(request.form, blog)
