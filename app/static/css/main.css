@@ -157,10 +157,6 @@ ul.navigation {
 }
 
 @media(max-width: 64em) {
-    /* .container {
-        width: 80%;
-    } */
-
     .navigation li {
         margin-inline-start: 0rem;
     }
@@ -190,10 +186,4 @@ ul.navigation {
     .primary-menu {
         display: none;
     }
-}
-
-@media(max-width: 768px) {
-    /* .container {
-        width: 95%;
-    } */
 }
