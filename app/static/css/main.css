@@ -30,7 +30,7 @@ body {
 }
 
 .container {
-    width: 70%;
+    width: min(95%, 72rem);
     padding: 10vh 1rem;
     margin: 0 auto;
 }
@@ -38,7 +38,7 @@ body {
 /* Navigation menu */
 nav {
     display: flex;
-    width: 100%;
+    width: min(95%, 72rem);
     justify-content: space-between;
     align-content: center;
     padding: 3vh 3vw;
@@ -156,10 +156,10 @@ ul.navigation {
     transform: translateX(100%);
 }
 
-@media(max-width: 1024px) {
-    .container {
+@media(max-width: 64em) {
+    /* .container {
         width: 80%;
-    }
+    } */
 
     .navigation li {
         margin-inline-start: 0rem;
@@ -193,7 +193,7 @@ ul.navigation {
 }
 
 @media(max-width: 768px) {
-    .container {
+    /* .container {
         width: 95%;
-    }
+    } */
 }
