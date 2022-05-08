@@ -32,7 +32,17 @@ venv\Scripts\activate
 ```
 pip install -r requirements.txt
 ```
-### 5. Run project
+### 5. Create file named *.env* containing the following:
+```
+FLASK_APP=run.py
+FLASK_ENV=development
+DATABASE_URL=sqlite:///database.db
+```
+### 6. Upgrade database tables
+```
+flask db upgrade
+```
+### 7. Run project
 ```
 flask run
 ```
